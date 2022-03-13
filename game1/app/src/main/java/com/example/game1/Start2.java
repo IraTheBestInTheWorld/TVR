@@ -17,8 +17,8 @@ public class Start2 extends AppCompatActivity {
         setContentView(R.layout.start2);
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        ImageButton buttonStart = (ImageButton) findViewById(R.id.imageButton5);
-        buttonStart.setOnClickListener(new View.OnClickListener() {
+        ImageButton buttonGood = (ImageButton) findViewById(R.id.imageButton5);
+        buttonGood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
