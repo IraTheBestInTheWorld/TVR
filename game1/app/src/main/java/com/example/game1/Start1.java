@@ -21,11 +21,12 @@ public class Start1 extends AppCompatActivity {
         buttonWhat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try{
+                try {
                     Intent intent = new Intent(Start1.this, Start2.class);
                     startActivity(intent);
                     finish();
-            } catch (Exception e){
+                } catch (Exception e) {
+
                 }
             }
         });
