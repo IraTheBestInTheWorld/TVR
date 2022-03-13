@@ -1,8 +1,11 @@
 package com.example.game1;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +17,18 @@ public class Level1_1 extends AppCompatActivity {
         setContentView(R.layout.level1_1);
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        ImageButton button_start_level = (ImageButton) findViewById(R.id.imageButton7);
+        button_start_level.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(Level1_1.this, Level1_2.class);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception e) {
+                }
+            }
+        });
 
     }
 }
