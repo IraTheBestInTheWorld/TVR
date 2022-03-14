@@ -50,7 +50,7 @@
         app:srcCompat="@drawable/task_l1" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/level1_start"
         android:layout_width="213dp"
         android:layout_height="75dp"
         android:layout_marginTop="560dp"

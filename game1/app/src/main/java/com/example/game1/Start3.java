@@ -17,7 +17,7 @@ public class Start3 extends AppCompatActivity {
         setContentView(R.layout.start3);
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        ImageButton buttonClear = (ImageButton) findViewById(R.id.imageButton6);
+        ImageButton buttonClear = (ImageButton) findViewById(R.id.clear);
         buttonClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,6 +29,14 @@ public class Start3 extends AppCompatActivity {
                 }
             }
         });
-
+    }
+    @Override
+    public void onBackPressed(){
+        try {
+            Intent intent = new Intent(Start3.this, Start2.class);
+            startActivity(intent);
+            finish();
+        } catch (Exception e) {
+        }
     }
 }

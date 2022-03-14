@@ -28,25 +28,26 @@
         app:srcCompat="@drawable/voldik_hello" />
 
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/start1_text"
+        android:layout_width="319dp"
+        android:layout_height="305dp"
         android:layout_marginTop="220dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/story1" />
+        app:srcCompat="@drawable/start1_text" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/what_is_the_matter"
+        android:layout_width="213dp"
+        android:layout_height="75dp"
         android:layout_marginTop="500dp"
         android:background="@android:color/transparent"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/chtozadelo"/>
+        app:srcCompat="@drawable/what_is_the_matter" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

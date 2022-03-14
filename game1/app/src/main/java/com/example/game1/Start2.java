@@ -17,7 +17,7 @@ public class Start2 extends AppCompatActivity {
         setContentView(R.layout.start2);
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        ImageButton buttonGood = (ImageButton) findViewById(R.id.imageButton5);
+        ImageButton buttonGood = (ImageButton) findViewById(R.id.good);
         buttonGood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,5 +29,14 @@ public class Start2 extends AppCompatActivity {
                 }
             }
         });
+    }
+    @Override
+    public void onBackPressed(){
+        try {
+            Intent intent = new Intent(Start2.this, Start1.class);
+            startActivity(intent);
+            finish();
+        } catch (Exception e) {
+        }
     }
 }

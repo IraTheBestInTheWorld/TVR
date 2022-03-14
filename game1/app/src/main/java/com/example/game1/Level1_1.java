@@ -17,7 +17,7 @@ public class Level1_1 extends AppCompatActivity {
         setContentView(R.layout.level1_1);
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        ImageButton button_start_level = (ImageButton) findViewById(R.id.imageButton7);
+        ImageButton button_start_level = (ImageButton) findViewById(R.id.level1_start);
         button_start_level.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,6 +29,14 @@ public class Level1_1 extends AppCompatActivity {
                 }
             }
         });
-
+    }
+    @Override
+    public void onBackPressed(){
+        try {
+            Intent intent = new Intent(Level1_1.this, Start3.class);
+            startActivity(intent);
+            finish();
+        } catch (Exception e) {
+        }
     }
 }
