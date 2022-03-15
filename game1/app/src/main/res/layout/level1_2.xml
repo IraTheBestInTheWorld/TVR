@@ -9,34 +9,55 @@
         android:id="@+id/imageView17"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="0dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/bg01" />
 
     <ImageView
-        android:id="@+id/imageView19"
+        android:id="@+id/words"
         android:layout_width="320dp"
         android:layout_height="78dp"
-        android:layout_marginStart="45dp"
         android:layout_marginTop="110dp"
-        app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/field_for_waors" />
 
     <ImageView
-        android:id="@+id/imageView20"
+        android:id="@+id/level"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="45dp"
         android:layout_marginTop="25dp"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/words"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/level_number" />
+
+
+    <Button
+        android:id="@+id/letter2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="M"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="208dp" />
+
+    <Button
+        android:id="@+id/letter1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+
+        android:layout_marginTop="20dp"
+        android:text="M"
+        app:layout_constraintStart_toStartOf="@id/words"
+        app:layout_constraintTop_toBottomOf="@+id/words" />
+
+    <GridView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
 </androidx.constraintlayout.widget.ConstraintLayout>
