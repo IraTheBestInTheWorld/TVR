@@ -57,7 +57,11 @@
         app:layout_constraintTop_toBottomOf="@+id/words" />
 
     <GridView
+        android:id="@+id/gridView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:numColumns="3">
+
+    </GridView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
