@@ -30,5 +30,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        ImageButton buttonExit = (ImageButton) findViewById(R.id.exit);
+        buttonExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }
