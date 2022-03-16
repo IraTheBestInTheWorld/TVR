@@ -9,6 +9,7 @@
         android:id="@+id/imageView17"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:backgroundTint="@color/white"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,13 +21,13 @@
 
     <ImageView
         android:id="@+id/words"
-        android:layout_width="320dp"
+        android:layout_width="321dp"
         android:layout_height="78dp"
         android:layout_marginTop="110dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/field_for_waors" />
+        app:srcCompat="@drawable/field_words" />
 
     <ImageView
         android:id="@+id/level"
@@ -38,30 +39,134 @@
         app:srcCompat="@drawable/level_number" />
 
 
-    <Button
-        android:id="@+id/letter2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:text="M"
-        tools:layout_editor_absoluteX="146dp"
-        tools:layout_editor_absoluteY="208dp" />
-
-    <Button
-        android:id="@+id/letter1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-
-        android:layout_marginTop="20dp"
-        android:text="M"
-        app:layout_constraintStart_toStartOf="@id/words"
-        app:layout_constraintTop_toBottomOf="@+id/words" />
-
-    <GridView
-        android:id="@+id/gridView"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:numColumns="3">
+        android:layout_marginTop="72dp"
+        app:layout_constraintTop_toBottomOf="@id/words"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical">
 
-    </GridView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/letter1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:textColor="#475A90"
+                android:fontFamily="@font/nunito_bold"
+                android:textSize="32sp"
+                android:text="M" />
+
+            <Button
+                android:id="@+id/letter2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:textColor="#475A90"
+                android:fontFamily="@font/nunito_bold"
+                android:textSize="32sp"
+                android:text="A" />
+
+            <Button
+                android:id="@+id/letter3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:textColor="#475A90"
+                android:fontFamily="@font/nunito_bold"
+                android:textSize="32sp"
+                android:text="G" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/letter4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:textColor="#475A90"
+                android:fontFamily="@font/nunito_bold"
+                android:textSize="32sp"
+                android:text="O" />
+
+            <Button
+                android:id="@+id/letter5"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:textColor="#475A90"
+                android:fontFamily="@font/nunito_bold"
+                android:textSize="32sp"
+                android:text="P" />
+
+            <Button
+                android:id="@+id/letter6"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:textColor="#475A90"
+                android:fontFamily="@font/nunito_bold"
+                android:textSize="32sp"
+                android:text="I" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/letter7"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:textColor="#475A90"
+                android:fontFamily="@font/nunito_bold"
+                android:textSize="32sp"
+                android:text="N" />
+
+            <Button
+                android:id="@+id/letter8"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:textColor="#475A90"
+                android:fontFamily="@font/nunito_bold"
+                android:textSize="32sp"
+                android:text="E" />
+
+            <Button
+                android:id="@+id/letter9"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/white"
+                android:textColor="#475A90"
+                android:fontFamily="@font/nunito_bold"
+                android:textSize="32sp"
+                android:text="C" />
+
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
