@@ -24,9 +24,11 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="25dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/level_number"
-        tools:layout_editor_absoluteX="36dp" />
+         />
 
 
     <LinearLayout
@@ -34,6 +36,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/needToGuess"
+        android:layout_marginTop="72dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="260dp">
@@ -41,80 +45,102 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
                 android:id="@+id/letter1"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="@color/white"
+                android:width="100dp"
+                android:height="100dp"
+                android:background="@color/white"
                 android:fontFamily="@font/nunito_bold"
-                android:text="M"
+                android:text="
+                M"
+                android:textAlignment="center"
                 android:textColor="#475A90"
-                android:textSize="32sp" />
+                android:textSize="32sp"
+                app:lineHeight="25dp" />
 
-            <Button
+            <TextView
                 android:id="@+id/letter2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="@color/white"
+                android:background="@color/white"
                 android:fontFamily="@font/nunito_bold"
-                android:text="A"
+                android:text="
+                A"
+                android:textAlignment="center"
                 android:textColor="#475A90"
-                android:textSize="32sp" />
+                android:textSize="32sp"
+                app:lineHeight="25dp" />
 
-            <Button
+            <TextView
                 android:id="@+id/letter3"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="@color/white"
+                android:background="@color/white"
                 android:fontFamily="@font/nunito_bold"
-                android:text="G"
+                android:text="
+                G"
+                android:textAlignment="center"
                 android:textColor="#475A90"
-                android:textSize="32sp" />
+                android:textSize="32sp"
+                app:lineHeight="25dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
-            <Button
+            <TextView
                 android:id="@+id/letter4"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="@color/white"
+                android:background="@color/white"
                 android:fontFamily="@font/nunito_bold"
-                android:text="O"
+                android:text="
+                O"
+                android:textAlignment="center"
                 android:textColor="#475A90"
-                android:textSize="32sp" />
+                android:textSize="32sp"
+                app:lineHeight="25dp" />
 
-            <Button
+            <TextView
                 android:id="@+id/letter5"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="@color/white"
+                android:background="@color/white"
                 android:fontFamily="@font/nunito_bold"
-                android:text="P"
+                android:text="
+                P"
+                android:textAlignment="center"
                 android:textColor="#475A90"
-                android:textSize="32sp" />
+                android:textSize="32sp"
+                app:lineHeight="25dp" />
 
-            <Button
+            <TextView
                 android:id="@+id/letter6"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="@color/white"
+                android:background="@color/white"
                 android:fontFamily="@font/nunito_bold"
-                android:text="I"
+                android:text="
+                I"
+                android:textAlignment="center"
                 android:textColor="#475A90"
-                android:textSize="32sp" />
+                android:textSize="32sp"
+                app:lineHeight="25dp" />
 
         </LinearLayout>
 
@@ -123,38 +149,47 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
                 android:id="@+id/letter7"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="@color/white"
+                android:background="@color/white"
                 android:fontFamily="@font/nunito_bold"
-                android:text="N"
+                android:text="
+                N"
+                android:textAlignment="center"
                 android:textColor="#475A90"
-                android:textSize="32sp" />
+                android:textSize="32sp"
+                app:lineHeight="25dp" />
 
-            <Button
+            <TextView
                 android:id="@+id/letter8"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="@color/white"
+                android:background="@color/white"
                 android:fontFamily="@font/nunito_bold"
-                android:text="E"
+                android:text="
+                E"
+                android:textAlignment="center"
                 android:textColor="#475A90"
-                android:textSize="32sp" />
+                android:textSize="32sp"
+                app:lineHeight="25dp" />
 
-            <Button
+            <TextView
                 android:id="@+id/letter9"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="@color/white"
+                android:background="@color/white"
                 android:fontFamily="@font/nunito_bold"
-                android:text="C"
+                android:text="
+                C"
+                android:textAlignment="center"
                 android:textColor="#475A90"
-                android:textSize="32sp" />
+                android:textSize="32sp"
+                app:lineHeight="25dp" />
 
         </LinearLayout>
     </LinearLayout>
