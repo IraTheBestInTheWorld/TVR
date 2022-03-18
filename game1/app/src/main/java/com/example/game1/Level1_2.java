@@ -5,6 +5,7 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.graphics.drawable.DrawableCompat;
 
 import org.w3c.dom.Text;
@@ -23,6 +25,17 @@ import java.util.ArrayList;
 
 public class Level1_2 extends AppCompatActivity {
 
+
+    class Letter{
+        TextView textView;
+        String status;
+
+        Letter(TextView textView){
+            this.textView = textView;
+            status = "empty";
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +43,7 @@ public class Level1_2 extends AppCompatActivity {
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         String str = "";
-        StringBuilder guessWord = new StringBuilder(str);
+        final StringBuilder[] guessWord = {new StringBuilder(str)};
 
         TextView letter1 = findViewById(R.id.letter1);
         TextView letter2 = findViewById(R.id.letter2);
@@ -43,9 +56,9 @@ public class Level1_2 extends AppCompatActivity {
         TextView letter9 = findViewById(R.id.letter9);
 
 
-        final TextView[] lastClicked = {null};
+        final TextView[][] lastClicked = {{null}};
 
-        Integer xxx = 0;
+     ;
 
         ImageView btnGuessWord = findViewById(R.id.btnGuessWord);
 
@@ -69,79 +82,83 @@ public class Level1_2 extends AppCompatActivity {
                 TextView letter = findViewById(v.getId());
                 int letter_id = v.getId();
 
-                if (letter.getBackground() = R.drawable.gradient_snake;{
+                if ((letter.getBackground() != new ColorDrawable(R.drawable.gradient_snake)) || (letter.getBackground() != new ColorDrawable(R.drawable.gradient_slytherin))) {
 
+                    boolean valid = false;
 
+                    switch (v.getId()) {
+                        case R.id.letter1:
+                            if (lastClicked[0][0] == null || lastClicked[0][0] == letter2 || lastClicked[0][0] == letter4) {
+                                valid = true;
+                            } else {
+                                valid = false;
+                            }
+                            break;
+                        case R.id.letter2:
+                            if (lastClicked[0][0] == null || lastClicked[0][0] == letter1 || lastClicked[0][0] == letter3 || lastClicked[0][0] == letter5) {
+                                valid = true;
+                            } else {
+                                valid = false;
+                            }
+                            break;
+                        case R.id.letter3:
+                            if (lastClicked[0][0] == null || lastClicked[0][0] == letter2 || lastClicked[0][0] == letter6) {
+                                valid = true;
+                            } else {
+                                valid = false;
+                            }
+                            break;
+                        case R.id.letter4:
+                            if (lastClicked[0][0] == null || lastClicked[0][0] == letter1 || lastClicked[0][0] == letter5 || lastClicked[0][0] == letter7) {
+                                valid = true;
+                            } else {
+                                valid = false;
+                            }
+                            break;
+                        case R.id.letter5:
+                            if (lastClicked[0][0] == null || lastClicked[0][0] == letter2 || lastClicked[0][0] == letter4 || lastClicked[0][0] == letter6 || lastClicked[0][0] == letter8) {
+                                valid = true;
+                            } else {
+                                valid = false;
+                            }
+                            break;
+                        case R.id.letter6:
+                            if (lastClicked[0][0] == null || lastClicked[0][0] == letter3 || lastClicked[0][0] == letter5 || lastClicked[0][0] == letter9) {
+                                valid = true;
+                            } else {
+                                valid = false;
+                            }
+                            break;
+                        case R.id.letter7:
+                            if (lastClicked[0][0] == null || lastClicked[0][0] == letter4 || lastClicked[0][0] == letter8) {
+                                valid = true;
+                            } else {
+                                valid = false;
+                            }
+                            break;
+                        case R.id.letter8:
+                            if (lastClicked[0][0] == null || lastClicked[0][0] == letter5 || lastClicked[0][0] == letter7 || lastClicked[0][0] == letter9) {
+                                valid = true;
+                            } else {
+                                valid = false;
+                            }
+                            break;
+                        case R.id.letter9:
+                            if (lastClicked[0][0] == null || lastClicked[0][0] == letter6 || lastClicked[0][0] == letter8) {
+                                valid = true;
+                            } else {
+                                valid = false;
+                            }
+                            break;
 
+                    }
+                    if (valid) {
+                        letter.setBackgroundResource(R.drawable.gradient_snake);
+                        CharSequence character = letter.getText();
+                        lastClicked[0][0] = letter;
+                        guessWord[0].append(character);
+                    }
                 }
-                boolean valid = false;
-
-                switch (v.getId()){
-                    case R.id.letter1:
-                        if(lastClicked[0] == null || lastClicked[0] == letter2 || lastClicked[0] == letter4){
-                            valid = true;
-                        }
-                        else { valid = false;
-                        }
-                        break;
-                    case R.id.letter2:
-                        if(lastClicked[0] == null || lastClicked[0] == letter1 || lastClicked[0] == letter3 || lastClicked[0] == letter5){
-                            valid = true;
-                        }
-                        else { valid = false;
-                        }
-                        break;
-                    case R.id.letter3:
-                        if(lastClicked[0] == null || lastClicked[0] == letter2 || lastClicked[0] == letter6){
-                            valid = true;
-                        }
-                        else { valid = false;
-                        }
-                        break;
-                    case R.id.letter4:
-                        if(lastClicked[0] == null || lastClicked[0] == letter1 || lastClicked[0] == letter5 || lastClicked[0] == letter7){
-                            valid = true;
-                        }
-                        else { valid = false;
-                        }
-                        break;
-                    case R.id.letter5:
-                        if(lastClicked[0] == null || lastClicked[0] == letter2 || lastClicked[0] == letter4 || lastClicked[0] == letter6 || lastClicked[0] == letter8){
-                            valid = true;
-                        }
-                        else { valid = false;
-                        }
-                        break;
-                    case R.id.letter6:
-                        if(lastClicked[0] == null || lastClicked[0] == letter3 || lastClicked[0] == letter5 || lastClicked[0] == letter9) {
-                            valid = true;
-                        }
-                        else { valid = false; }
-                        break;
-                    case R.id.letter7:
-                        if(lastClicked[0] == null || lastClicked[0] == letter4 || lastClicked[0] == letter8) {
-                            valid = true;
-                        }
-                        else { valid = false; }
-                        break;
-                    case R.id.letter8:
-                        if(lastClicked[0] == null || lastClicked[0] == letter5 || lastClicked[0] == letter7 || lastClicked[0] == letter9) {
-                            valid = true;
-                        }
-                        else { valid = false; }
-                        break;
-                    case R.id.letter9:
-                        if(lastClicked[0] == null || lastClicked[0] == letter6 || lastClicked[0] == letter8) {
-                            valid = true;
-                        }
-                        else { valid = false; }
-                        break;
-
-                }
-                    letter.setBackgroundResource(R.drawable.gradient_snake);
-                    CharSequence character = letter.getText();
-                    lastClicked[0] = letter;
-                    guessWord.append(character);
             }
         };
 
@@ -158,26 +175,40 @@ public class Level1_2 extends AppCompatActivity {
         btnGuessWord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView textView = ntg_1;
-                Boolean isFound = false;
-                if (guessWord == new StringBuilder("MAGIC")) {
+                TextView textView = null;
+                Boolean isGuessed = false;
+
+                if (guessWord[0].toString().equals("MAGIC")) {
                     textView = ntg_1;
-                    isFound = true;
+                    isGuessed = true;
                 }
-                if (guessWord == new StringBuilder("OPEN")) {
+                if (guessWord[0].toString().equals("OPEN")) {
                     textView = ntg_2;
-                    isFound = true;
+                    isGuessed = true;
                 }
-                if (isFound) {
+
+                if (isGuessed) {
                     textView.setTextColor(0x265E4A);
+                    int grad = R.drawable.gradient_snake;
+
                     for (int i = 0; i < 9; i++) {
-                        ColorDrawable buttonBackground = (ColorDrawable) btns.get(i).getBackground();
-                        int btnColor = buttonBackground.getColor();
-                        if (btnColor == 0x3BEECE) {
-                            btns.get(i).setBackgroundColor(R.drawable.gradient_slytherin);
+                        TextView txtView = buttons[i];
+                        buttons[i].setBackground(null);
+                        buttons[i].setTextColor(Color.WHITE);
+                        buttons[i].setBackgroundResource(R.drawable.gradient_slytherin);
+                    }
+                }
+                else {
+                    for (int i = 0; i < 9; i++) {
+                        if (buttons[i].getBackground() == new ColorDrawable(R.drawable.gradient_snake)) {
+                            buttons[i].setBackgroundResource(R.color.white);
+
                         }
                     }
                 }
+                guessWord[0].delete(0,guessWord[0].length());
+                lastClicked[0] = null;
+
             }
         });
     }
