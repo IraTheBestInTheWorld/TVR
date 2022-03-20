@@ -56,9 +56,11 @@
                 android:width="100dp"
                 android:height="100dp"
                 android:background="@color/white"
+                android:backgroundTintMode="add"
                 android:fontFamily="@font/nunito_bold"
-                android:text="M"
                 android:gravity="center"
+                android:text="M"
+                android:tooltipText="empty"
                 android:textColor="#475A90"
                 android:textSize="32sp"
                 app:lineHeight="25dp" />
@@ -72,6 +74,7 @@
                 android:fontFamily="@font/nunito_bold"
                 android:text="A"
                 android:gravity="center"
+                android:tooltipText="empty"
                 android:textColor="#475A90"
                 android:textSize="32sp"
                 app:lineHeight="25dp" />
@@ -85,6 +88,7 @@
                 android:fontFamily="@font/nunito_bold"
                 android:text="G"
                 android:gravity="center"
+                android:tooltipText="empty"
                 android:textColor="#475A90"
                 android:textSize="32sp"
                 app:lineHeight="25dp" />
@@ -106,6 +110,7 @@
                 android:fontFamily="@font/nunito_bold"
                 android:text="O"
                 android:gravity="center"
+                android:tooltipText="empty"
                 android:textColor="#475A90"
                 android:textSize="32sp"
                 app:lineHeight="25dp" />
@@ -120,6 +125,7 @@
                 android:text="P"
                 android:textAlignment="center"
                 android:gravity="center"
+                android:tooltipText="empty"
                 android:textColor="#475A90"
                 android:textSize="32sp"
                 app:lineHeight="25dp" />
@@ -134,6 +140,7 @@
                 android:text="I"
                 android:gravity="center"
                 android:textAlignment="center"
+                android:tooltipText="empty"
                 android:textColor="#475A90"
                 android:textSize="32sp"
                 app:lineHeight="25dp" />
@@ -155,6 +162,7 @@
                 android:text="N"
                 android:gravity="center"
                 android:textAlignment="center"
+                android:tooltipText="empty"
                 android:textColor="#475A90"
                 android:textSize="32sp"
                 app:lineHeight="25dp" />
@@ -169,6 +177,7 @@
                 android:text="E"
                 android:gravity="center"
                 android:textAlignment="center"
+                android:tooltipText="empty"
                 android:textColor="#475A90"
                 android:textSize="32sp"
                 app:lineHeight="25dp" />
@@ -183,6 +192,7 @@
                 android:text="C"
                 android:gravity="center"
                 android:textAlignment="center"
+                android:tooltipText="empty"
                 android:textColor="#475A90"
                 android:textSize="32sp"
                 app:lineHeight="25dp" />

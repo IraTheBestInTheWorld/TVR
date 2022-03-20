@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.media.Image;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -15,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.graphics.drawable.DrawableCompat;
@@ -26,22 +28,13 @@ import java.util.ArrayList;
 public class Level1_2 extends AppCompatActivity {
 
 
-    class Letter{
-        TextView textView;
-        String status;
-
-        Letter(TextView textView){
-            this.textView = textView;
-            status = "empty";
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.level1_2);
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         String str = "";
         final StringBuilder[] guessWord = {new StringBuilder(str)};
 
@@ -55,10 +48,10 @@ public class Level1_2 extends AppCompatActivity {
         TextView letter8 = findViewById(R.id.letter8);
         TextView letter9 = findViewById(R.id.letter9);
 
+        int[] drawables = {R.drawable.gradient_slytherin, R.drawable.gradient_blue, R.drawable.gradient_orange};
+        final int[] color = {0};
 
         final TextView[][] lastClicked = {{null}};
-
-     ;
 
         ImageView btnGuessWord = findViewById(R.id.btnGuessWord);
 
@@ -77,15 +70,14 @@ public class Level1_2 extends AppCompatActivity {
 
 
         TextView.OnClickListener onClickListener =  new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
                 TextView letter = findViewById(v.getId());
-                int letter_id = v.getId();
 
-                if ((letter.getBackground() != new ColorDrawable(R.drawable.gradient_snake)) || (letter.getBackground() != new ColorDrawable(R.drawable.gradient_slytherin))) {
+                if (letter.getTooltipText().equals("empty")) {
 
                     boolean valid = false;
-
                     switch (v.getId()) {
                         case R.id.letter1:
                             if (lastClicked[0][0] == null || lastClicked[0][0] == letter2 || lastClicked[0][0] == letter4) {
@@ -150,13 +142,14 @@ public class Level1_2 extends AppCompatActivity {
                                 valid = false;
                             }
                             break;
-
                     }
                     if (valid) {
                         letter.setBackgroundResource(R.drawable.gradient_snake);
-                        CharSequence character = letter.getText();
+                        letter.setTooltipText("selected");
                         lastClicked[0][0] = letter;
+                        CharSequence character = letter.getText();
                         guessWord[0].append(character);
+
                     }
                 }
             }
@@ -172,9 +165,11 @@ public class Level1_2 extends AppCompatActivity {
         letter8.setOnClickListener(onClickListener);
         letter9.setOnClickListener(onClickListener);
 
-        btnGuessWord.setOnClickListener(new View.OnClickListener() {
+
+        Button.OnClickListener onClickListenerButton =  new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 TextView textView = null;
                 Boolean isGuessed = false;
 
@@ -189,28 +184,33 @@ public class Level1_2 extends AppCompatActivity {
 
                 if (isGuessed) {
                     textView.setTextColor(0x265E4A);
-                    int grad = R.drawable.gradient_snake;
 
                     for (int i = 0; i < 9; i++) {
-                        TextView txtView = buttons[i];
-                        buttons[i].setBackground(null);
-                        buttons[i].setTextColor(Color.WHITE);
-                        buttons[i].setBackgroundResource(R.drawable.gradient_slytherin);
+                        if (buttons[i].getTooltipText().equals("selected")) {
+                            buttons[i].setBackground(null);
+                            buttons[i].setBackgroundResource(drawables[color[0]]);
+                            buttons[i].setTextColor(Color.WHITE);
+                            buttons[i].setTooltipText("guessed");;
+                        }
                     }
-                }
-                else {
+                    color[0] += 1;
+                } else {
                     for (int i = 0; i < 9; i++) {
-                        if (buttons[i].getBackground() == new ColorDrawable(R.drawable.gradient_snake)) {
+                        if (buttons[i].getTooltipText().equals("selected")) {
+                            buttons[i].setBackground(null);
                             buttons[i].setBackgroundResource(R.color.white);
+                            buttons[i].setTooltipText("empty");
 
                         }
                     }
                 }
-                guessWord[0].delete(0,guessWord[0].length());
-                lastClicked[0] = null;
-
+                guessWord[0].delete(0, guessWord[0].length());
+                lastClicked[0][0] = null;
             }
-        });
+        };
+
+        btnGuessWord.setOnClickListener(onClickListenerButton);
+
     }
 }
 
