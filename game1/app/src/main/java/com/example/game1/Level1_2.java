@@ -195,6 +195,7 @@ public class Level1_2 extends AppCompatActivity {
                     }
                     color[0] += 1;
                 } else {
+
                     for (int i = 0; i < 9; i++) {
                         if (buttons[i].getTooltipText().equals("selected")) {
                             buttons[i].setBackground(null);
@@ -206,10 +207,13 @@ public class Level1_2 extends AppCompatActivity {
                 }
                 guessWord[0].delete(0, guessWord[0].length());
                 lastClicked[0][0] = null;
+                //popup_if_wrong
             }
+           
         };
 
         btnGuessWord.setOnClickListener(onClickListenerButton);
+
 
     }
 }
