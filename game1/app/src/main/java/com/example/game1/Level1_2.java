@@ -1,5 +1,7 @@
 package com.example.game1;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,7 +30,8 @@ import java.util.ArrayList;
 
 public class Level1_2 extends AppCompatActivity {
 
-
+    final Context context = this;
+    private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -195,7 +199,6 @@ public class Level1_2 extends AppCompatActivity {
                     }
                     color[0] += 1;
                 } else {
-
                     for (int i = 0; i < 9; i++) {
                         if (buttons[i].getTooltipText().equals("selected")) {
                             buttons[i].setBackground(null);
@@ -207,9 +210,26 @@ public class Level1_2 extends AppCompatActivity {
                 }
                 guessWord[0].delete(0, guessWord[0].length());
                 lastClicked[0][0] = null;
-                //popup_if_wrong
+                //popup_if_wrong он даже работает
+                final Dialog dialog = new Dialog(context);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                dialog.setContentView(R.layout.popup_if_wrong);
+                dialog.setTitle(" ");
+                // set the custom dialog components - text, image and button
+                ImageView image = (ImageView) dialog.findViewById(R.id.voldik_face_palm);
+                image.setImageResource(R.drawable.voldik_face_palm);
+                ImageView image1 = (ImageView) dialog.findViewById(R.id.do_you_speak);
+                ImageButton dialogButton = (ImageButton) dialog.findViewById(R.id.yes_sorry);
+                // if button is clicked, close the custom dialog
+                dialogButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
             }
-           
+
         };
 
         btnGuessWord.setOnClickListener(onClickListenerButton);
