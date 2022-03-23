@@ -32,6 +32,28 @@ public class Level1_2 extends AppCompatActivity {
 
     final Context context = this;
     private Button button;
+
+
+    public void popUp(){
+        final Dialog dialog = new Dialog(context);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialog.setContentView(R.layout.popup_if_wrong);
+        dialog.setTitle(" ");
+        // set the custom dialog components - text, image and button
+        ImageView image = (ImageView) dialog.findViewById(R.id.voldik_face_palm);
+        image.setImageResource(R.drawable.voldik_face_palm);
+        ImageView image1 = (ImageView) dialog.findViewById(R.id.do_you_speak);
+        ImageButton dialogButton = (ImageButton) dialog.findViewById(R.id.yes_sorry);
+        // if button is clicked, close the custom dialog
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -170,12 +192,14 @@ public class Level1_2 extends AppCompatActivity {
         letter9.setOnClickListener(onClickListener);
 
 
+
         Button.OnClickListener onClickListenerButton =  new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
                 TextView textView = null;
                 Boolean isGuessed = false;
+                lastClicked[0][0] = null;
 
                 if (guessWord[0].toString().equals("MAGIC")) {
                     textView = ntg_1;
@@ -207,27 +231,13 @@ public class Level1_2 extends AppCompatActivity {
 
                         }
                     }
+
+                  popUp();
                 }
                 guessWord[0].delete(0, guessWord[0].length());
                 lastClicked[0][0] = null;
-                //popup_if_wrong он даже работает
-                final Dialog dialog = new Dialog(context);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-                dialog.setContentView(R.layout.popup_if_wrong);
-                dialog.setTitle(" ");
-                // set the custom dialog components - text, image and button
-                ImageView image = (ImageView) dialog.findViewById(R.id.voldik_face_palm);
-                image.setImageResource(R.drawable.voldik_face_palm);
-                ImageView image1 = (ImageView) dialog.findViewById(R.id.do_you_speak);
-                ImageButton dialogButton = (ImageButton) dialog.findViewById(R.id.yes_sorry);
-                // if button is clicked, close the custom dialog
-                dialogButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog.dismiss();
-                    }
-                });
-                dialog.show();
+
+
             }
 
         };
