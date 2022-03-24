@@ -51,4 +51,18 @@
         app:srcCompat="@drawable/resource_continue"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-320dp"
+        android:layout_marginTop="130dp"
+        android:text="Уровень 1 пройден"
+        android:fontFamily="@font/nunito_bold"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/imageView21"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
