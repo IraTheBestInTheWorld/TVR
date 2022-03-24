@@ -75,6 +75,8 @@ public class Level1_2 extends AppCompatActivity {
         TextView letter8 = findViewById(R.id.letter8);
         TextView letter9 = findViewById(R.id.letter9);
 
+        final boolean[] levelIsPassed = {true};
+
         int[] drawables = {R.drawable.gradient_slytherin, R.drawable.gradient_blue, R.drawable.gradient_orange};
         final int[] color = {0};
 
@@ -86,14 +88,8 @@ public class Level1_2 extends AppCompatActivity {
         TextView ntg_2 = findViewById(R.id.ntg_2);
 
         TextView[] buttons = {letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8, letter9};
-        ArrayList<TextView> btns = new ArrayList<TextView>();
-        btns.add(letter1);
-        btns.add(letter2);
-        btns.add(letter3);
 
-        ArrayList<StringBuilder> russianWords = new ArrayList<StringBuilder>();
-        russianWords.add(new StringBuilder("MAGIC"));
-        russianWords.add(new StringBuilder("OPEN"));
+        StringBuilder[] hiddenWords = {new StringBuilder("MAGIC"), new StringBuilder("OPEN")};
 
 
         TextView.OnClickListener onClickListener =  new View.OnClickListener() {
@@ -202,13 +198,15 @@ public class Level1_2 extends AppCompatActivity {
                 Boolean isGuessed = false;
                 lastClicked[0][0] = null;
 
-                if (guessWord[0].toString().equals("MAGIC")) {
+                if (hiddenWords[0] != null && guessWord[0].toString().equals(hiddenWords[0].toString())) {
                     textView = ntg_1;
                     isGuessed = true;
+                    hiddenWords[0] = null;
                 }
-                if (guessWord[0].toString().equals("OPEN")) {
+                if (hiddenWords[1] != null && guessWord[0].toString().equals(hiddenWords[1].toString())) {
                     textView = ntg_2;
                     isGuessed = true;
+                    hiddenWords[1] = null;
                 }
 
                 if (isGuessed) {
@@ -235,8 +233,24 @@ public class Level1_2 extends AppCompatActivity {
 
                   popUp();
                 }
+
                 guessWord[0].delete(0, guessWord[0].length());
                 lastClicked[0][0] = null;
+
+                levelIsPassed[0] = true;
+
+                for ( StringBuilder stringBuilder : hiddenWords){
+                    if (stringBuilder != null){
+                        levelIsPassed[0] = false;
+                        break;
+                    }
+                }
+
+
+                /* если уровень пройден */
+                if (levelIsPassed[0]){
+                    popUp();
+                }   
 
 
             }
