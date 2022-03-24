@@ -54,6 +54,35 @@ public class Level1_2 extends AppCompatActivity {
         dialog.show();
     }
 
+    public void popUpEnd(){
+        final Dialog dialog1 = new Dialog(context);
+        dialog1.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialog1.setContentView(R.layout.popup_level_end);
+        dialog1.setTitle(" ");
+        // set the custom dialog components - text, image and button
+        TextView text = (TextView) dialog1.findViewById(R.id.textView2);
+        ImageView image = (ImageView) dialog1.findViewById(R.id.popup);
+        image.setImageResource(R.drawable.ic_popup);
+        ImageView image1 = (ImageView) dialog1.findViewById(R.id.voldik_not_bad);
+        ImageView image3 = (ImageView) dialog1.findViewById(R.id.level1_text);
+        ImageButton dialogButton1 = (ImageButton) dialog1.findViewById(R.id.continue_popup);
+        // if button is clicked, close the custom dialog
+        dialogButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 try {
+                    Intent intent = new Intent(Level1_2.this, Level2_1.class );
+                    startActivity(intent);
+                    finish();
+                } catch (Exception e){
+
+                }
+                dialog1.dismiss();
+            }
+        });
+        dialog1.show();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -249,7 +278,8 @@ public class Level1_2 extends AppCompatActivity {
 
                 /* если уровень пройден */
                 if (levelIsPassed[0]){
-                    popUp();
+                    popUpEnd();
+
                 }   
 
 
