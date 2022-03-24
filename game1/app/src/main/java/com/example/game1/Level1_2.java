@@ -54,6 +54,7 @@ public class Level1_2 extends AppCompatActivity {
         dialog.show();
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
