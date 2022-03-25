@@ -31,7 +31,7 @@ public class Level2_1 extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         try {
-            Intent intent = new Intent(Level2_1.this, Start3.class);
+            Intent intent = new Intent(Level2_1.this, Level1_2.class);
             startActivity(intent);
             finish();
         } catch (Exception e) {

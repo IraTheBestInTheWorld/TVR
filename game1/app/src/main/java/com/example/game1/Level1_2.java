@@ -291,6 +291,15 @@ public class Level1_2 extends AppCompatActivity {
 
 
     }
+
+    public void onBackPressed(){
+        try {
+            Intent intent = new Intent(Level1_2.this, Level1_1.class);
+            startActivity(intent);
+            finish();
+        } catch (Exception e) {
+        }
+    }
 }
 
 
