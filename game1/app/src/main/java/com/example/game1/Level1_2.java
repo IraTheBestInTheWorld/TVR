@@ -57,10 +57,10 @@ public class Level1_2 extends AppCompatActivity {
     public void popUpEnd(){
         final Dialog dialog1 = new Dialog(context);
         dialog1.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-        dialog1.setContentView(R.layout.popup_level_end);
+        dialog1.setContentView(R.layout.popup_level1_end);
         dialog1.setTitle(" ");
         // set the custom dialog components - text, image and button
-        TextView text = (TextView) dialog1.findViewById(R.id.textView2);
+        TextView text = (TextView) dialog1.findViewById(R.id.level1_text_end);
         ImageView image = (ImageView) dialog1.findViewById(R.id.popup);
         image.setImageResource(R.drawable.ic_popup);
         ImageView image1 = (ImageView) dialog1.findViewById(R.id.voldik_not_bad);
