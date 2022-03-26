@@ -246,7 +246,8 @@ public class Level1_2 extends AppCompatActivity {
                             buttons[i].setBackground(null);
                             buttons[i].setBackgroundResource(drawables[color[0]]);
                             buttons[i].setTextColor(Color.WHITE);
-                            buttons[i].setTooltipText("guessed");;
+                            buttons[i].setTooltipText("guessed");
+                            ;
                         }
                     }
                     color[0] += 1;
@@ -260,7 +261,7 @@ public class Level1_2 extends AppCompatActivity {
                         }
                     }
 
-                  popUp();
+                    popUp();
                 }
 
                 guessWord[0].delete(0, guessWord[0].length());
@@ -268,13 +269,12 @@ public class Level1_2 extends AppCompatActivity {
 
                 levelIsPassed[0] = true;
 
-                for ( StringBuilder stringBuilder : hiddenWords){
-                    if (stringBuilder != null){
+                for (StringBuilder stringBuilder : hiddenWords) {
+                    if (stringBuilder != null) {
                         levelIsPassed[0] = false;
                         break;
                     }
                 }
-
             }
 
         };
