@@ -34,6 +34,7 @@ public class Level1_2 extends AppCompatActivity {
     private Button button;
 
 
+
     public void popUp(){
         final Dialog dialog = new Dialog(context);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
@@ -103,6 +104,8 @@ public class Level1_2 extends AppCompatActivity {
         TextView letter7 = findViewById(R.id.letter7);
         TextView letter8 = findViewById(R.id.letter8);
         TextView letter9 = findViewById(R.id.letter9);
+
+        final int[] mistakesCounter = {0};
 
         final boolean[] levelIsPassed = {true};
 
@@ -251,6 +254,7 @@ public class Level1_2 extends AppCompatActivity {
                         }
                     }
                     color[0] += 1;
+
                 } else {
                     for (int i = 0; i < 9; i++) {
                         if (buttons[i].getTooltipText().equals("selected")) {
@@ -260,8 +264,13 @@ public class Level1_2 extends AppCompatActivity {
 
                         }
                     }
+                    mistakesCounter[0]++;
+                    if (mistakesCounter[0] == 3){
+                        popUp();
+                        mistakesCounter[0] = 0;
+                    }
 
-                    popUp();
+
                 }
 
                 guessWord[0].delete(0, guessWord[0].length());
