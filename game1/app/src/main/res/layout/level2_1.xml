@@ -29,13 +29,36 @@
         app:srcCompat="@drawable/start_l1" />
 
     <ImageView
-        android:id="@+id/imageView19"
+        android:id="@+id/imageView3"
         android:layout_width="319dp"
-        android:layout_height="351dp"
-        android:layout_marginTop="95dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="170dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="389dp"
+        app:layout_constraintStart_toEndOf="@+id/imageView11"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/level2_text"/>
+        app:srcCompat="@drawable/level2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView19"
+            android:layout_width="320dp"
+            android:layout_height="350dp"
+            android:layout_marginTop="80dp"
+            app:srcCompat="@drawable/level2_text" />
+
+        <ImageView
+            android:id="@+id/imageView18"
+            android:layout_width="320dp"
+            android:layout_height="170dp"
+            android:layout_marginTop="-70dp"
+            app:srcCompat="@drawable/level2" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

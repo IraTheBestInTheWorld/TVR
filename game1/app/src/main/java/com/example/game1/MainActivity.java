@@ -30,6 +30,18 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        ImageButton buttonContinue = (ImageButton) findViewById(R.id.continue_main);
+        buttonContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(MainActivity.this, Level1_2.class);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception e) {
+                }
+            }
+        });
         ImageButton buttonExit = (ImageButton) findViewById(R.id.exit);
         buttonExit.setOnClickListener(new View.OnClickListener() {
             @Override

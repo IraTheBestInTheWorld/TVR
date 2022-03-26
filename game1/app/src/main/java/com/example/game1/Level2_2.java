@@ -22,7 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Level2_2 extends AppCompatActivity {
 
     final Context context = this;
-    private Button button;
+
 
     public void popUp(){
         final Dialog dialog = new Dialog(context);
@@ -297,7 +297,7 @@ public class Level2_2 extends AppCompatActivity {
                 if (hiddenWords[2] != null && guessWord[0].toString().equals(hiddenWords[2].toString())) {
                     textView = ntg_3;
                     isGuessed = true;
-                    hiddenWords[1] = null;
+                    hiddenWords[2] = null;
                 }
 
                 if (isGuessed) {
