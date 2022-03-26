@@ -17,12 +17,14 @@ public class Level2_1 extends AppCompatActivity {
         setContentView(R.layout.level2_1);
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        ImageButton button_start_level = (ImageButton) findViewById(R.id.level2_start);
-        button_start_level.setOnClickListener(new View.OnClickListener() {
+        ImageButton button_start = findViewById(R.id.level2_start);
+        button_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-
+                    Intent intent = new Intent(Level2_1.this, Level2_2.class);
+                    startActivity(intent);
+                    finish();
                 } catch (Exception e) {
                 }
             }
