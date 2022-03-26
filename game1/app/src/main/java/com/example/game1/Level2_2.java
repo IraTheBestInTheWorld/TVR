@@ -257,22 +257,11 @@ public class Level2_2 extends AppCompatActivity {
             }
         };
 
-        letter1.setOnClickListener(onClickListener);
-        letter2.setOnClickListener(onClickListener);
-        letter3.setOnClickListener(onClickListener);
-        letter4.setOnClickListener(onClickListener);
-        letter5.setOnClickListener(onClickListener);
-        letter6.setOnClickListener(onClickListener);
-        letter7.setOnClickListener(onClickListener);
-        letter8.setOnClickListener(onClickListener);
-        letter9.setOnClickListener(onClickListener);
-        letter10.setOnClickListener(onClickListener);
-        letter11.setOnClickListener(onClickListener);
-        letter12.setOnClickListener(onClickListener);
-        letter13.setOnClickListener(onClickListener);
-        letter14.setOnClickListener(onClickListener);
-        letter15.setOnClickListener(onClickListener);
-        letter16.setOnClickListener(onClickListener);
+
+        for(int i = 0; i < 16; i++){
+            buttons[i].setOnClickListener(onClickListener);
+        }
+
 
 
 
@@ -302,6 +291,7 @@ public class Level2_2 extends AppCompatActivity {
 
                 if (isGuessed) {
 
+
                     textView.setPaintFlags(textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
                     for (int i = 0; i < 16; i++) {
@@ -310,7 +300,6 @@ public class Level2_2 extends AppCompatActivity {
                             buttons[i].setBackgroundResource(drawables[color[0]]);
                             buttons[i].setTextColor(Color.WHITE);
                             buttons[i].setTooltipText("guessed");
-                            ;
                         }
                     }
                     color[0] += 1;

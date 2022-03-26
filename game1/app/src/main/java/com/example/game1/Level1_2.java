@@ -200,15 +200,9 @@ public class Level1_2 extends AppCompatActivity {
             }
         };
 
-        letter1.setOnClickListener(onClickListener);
-        letter2.setOnClickListener(onClickListener);
-        letter3.setOnClickListener(onClickListener);
-        letter4.setOnClickListener(onClickListener);
-        letter5.setOnClickListener(onClickListener);
-        letter6.setOnClickListener(onClickListener);
-        letter7.setOnClickListener(onClickListener);
-        letter8.setOnClickListener(onClickListener);
-        letter9.setOnClickListener(onClickListener);
+        for(int i = 0; i < 9; i++){
+            buttons[i].setOnClickListener(onClickListener);
+        }
 
 
 
