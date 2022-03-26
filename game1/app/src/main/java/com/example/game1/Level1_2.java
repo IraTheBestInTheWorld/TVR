@@ -249,7 +249,7 @@ public class Level1_2 extends AppCompatActivity {
                 /* если уровень пройден */
                 if (levelIsPassed[0]){
                     popUp();
-                }   
+                }
 
 
             }
