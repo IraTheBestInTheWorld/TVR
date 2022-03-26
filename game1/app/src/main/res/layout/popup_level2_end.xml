@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,7 +13,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
         <ImageView
             android:id="@+id/popup"
             android:layout_width="wrap_content"
@@ -21,18 +20,16 @@
             android:layout_marginTop="72dp"
             app:srcCompat="@drawable/ic_popup" />
 
-
         <TextView
-            android:id="@+id/level1_text_end"
+            android:id="@+id/level2_text_end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/nunito_bold"
-            android:layout_marginTop="-80dp"
-            android:text="Уровень 1 пройден!"
+            android:layout_marginTop="-75dp"
+            android:text="Уровень 2 пройден!"
             android:textColor="@color/white"
             android:textSize="24sp" />
-
 
         <ImageView
             android:id="@+id/voldik_not_bad"
@@ -42,25 +39,20 @@
             app:srcCompat="@drawable/voldek_not_bad" />
 
         <ImageView
-            android:id="@+id/level1_text"
-            android:layout_width="300dp"
-            android:layout_height="90dp"
+            android:id="@+id/level2_popup"
+            android:layout_width="320dp"
+            android:layout_height="170dp"
             android:layout_marginTop="-50dp"
-            app:srcCompat="@drawable/level1_end" />
+            app:srcCompat="@drawable/level2_popup" />
 
         <ImageButton
             android:id="@+id/continue_popup"
             android:layout_width="222dp"
             android:layout_height="74dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:background="@android:color/transparent"
             android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/level1_text"
             app:srcCompat="@drawable/resource_continue" />
-
 
 
     </LinearLayout>
