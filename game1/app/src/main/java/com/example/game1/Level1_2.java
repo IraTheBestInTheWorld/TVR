@@ -3,12 +3,9 @@ package com.example.game1;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -21,18 +18,11 @@ import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.content.res.AppCompatResources;
-import androidx.core.graphics.drawable.DrawableCompat;
-
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
 
 public class Level1_2 extends AppCompatActivity {
 
     final Context context = this;
     private Button button;
-
 
 
     public void popUp(){
@@ -109,7 +99,7 @@ public class Level1_2 extends AppCompatActivity {
 
         final boolean[] levelIsPassed = {true};
 
-        int[] drawables = {R.drawable.gradient_slytherin, R.drawable.gradient_blue, R.drawable.gradient_orange};
+        int[] drawables = {R.drawable.gradient_slytherin, R.drawable.gradient_blue, R.drawable.gradient_yellow};
         final int[] color = {0};
 
         final TextView[][] lastClicked = {{null}};
@@ -242,7 +232,8 @@ public class Level1_2 extends AppCompatActivity {
                 }
 
                 if (isGuessed) {
-                    textView.setTextColor(0x265E4A);
+
+                    textView.setPaintFlags(textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
                     for (int i = 0; i < 9; i++) {
                         if (buttons[i].getTooltipText().equals("selected")) {
@@ -269,8 +260,6 @@ public class Level1_2 extends AppCompatActivity {
                         popUp();
                         mistakesCounter[0] = 0;
                     }
-
-
                 }
 
                 guessWord[0].delete(0, guessWord[0].length());
