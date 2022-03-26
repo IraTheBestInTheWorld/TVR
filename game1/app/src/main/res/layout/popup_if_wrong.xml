@@ -14,21 +14,21 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/voldik_face_palm"
             android:layout_width="320dp"
             android:layout_height="320dp"
             android:layout_marginTop="100dp"
             app:srcCompat="@drawable/voldik_face_palm" />
 
         <ImageView
-            android:id="@+id/imageView18"
+            android:id="@+id/do_you_speak"
             android:layout_width="313dp"
             android:layout_height="130dp"
             android:layout_marginTop="-90dp"
             app:srcCompat="@drawable/do_you_speak_english" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/yes_sorry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
