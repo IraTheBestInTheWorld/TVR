@@ -275,6 +275,9 @@ public class Level1_2 extends AppCompatActivity {
                         break;
                     }
                 }
+                if(levelIsPassed[0]){
+                    popUpEnd();
+                }
             }
 
         };
