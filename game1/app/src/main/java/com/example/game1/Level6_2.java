@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
@@ -71,6 +72,16 @@ public class Level6_2 extends AppCompatActivity {
                 dialog1.dismiss();
             }
         });
+
+        SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
+        final int level = save.getInt("Level", 1);
+        if (level>6){
+
+        } else {
+            SharedPreferences.Editor editor = save.edit();
+            editor.putInt("Level", 7);
+            editor.commit();
+        }
         dialog1.show();
     }
 
