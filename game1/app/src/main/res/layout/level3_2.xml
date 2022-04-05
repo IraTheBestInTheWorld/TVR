@@ -333,32 +333,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="30dp"
-            android:fontFamily="@font/nunito_semibold"
+            android:layout_marginLeft="25dp"
+            android:fontFamily="@font/nunito_bold"
             android:text="Убить"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/ntg_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="30dp"
-            android:fontFamily="@font/nunito_semibold"
+            android:layout_marginLeft="25dp"
+            android:fontFamily="@font/nunito_bold"
             android:text="Украсть"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/ntg_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="30dp"
-            android:fontFamily="@font/nunito_semibold"
+            android:layout_marginLeft="25dp"
+            android:fontFamily="@font/nunito_bold"
             android:text="Странный"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="19sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

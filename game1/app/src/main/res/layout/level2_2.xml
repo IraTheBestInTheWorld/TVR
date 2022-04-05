@@ -349,22 +349,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="40dp"
-            android:fontFamily="@font/nunito_semibold"
+            android:layout_marginLeft="37dp"
+            android:fontFamily="@font/nunito_bold"
             android:text="Мать"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/ntg_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="40dp"
-            android:fontFamily="@font/nunito_semibold"
+            android:layout_marginLeft="37dp"
+            android:fontFamily="@font/nunito_bold"
             android:text="Отец"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/ntg_3"
@@ -372,10 +372,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="40dp"
-            android:fontFamily="@font/nunito_semibold"
+            android:fontFamily="@font/nunito_bold"
             android:text="Палочка"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="19sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

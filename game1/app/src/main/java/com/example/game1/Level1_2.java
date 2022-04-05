@@ -205,7 +205,6 @@ public class Level1_2 extends AppCompatActivity {
         }
 
 
-
         Button.OnClickListener onClickListenerButton =  new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
@@ -228,7 +227,7 @@ public class Level1_2 extends AppCompatActivity {
                 if (isGuessed) {
 
                     textView.setPaintFlags(textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-
+                    textView.setTextColor(0x265E4A);
                     for (int i = 0; i < 9; i++) {
                         if (buttons[i].getTooltipText().equals("selected")) {
                             buttons[i].setBackground(null);

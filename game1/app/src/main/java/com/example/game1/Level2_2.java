@@ -293,7 +293,7 @@ public class Level2_2 extends AppCompatActivity {
 
 
                     textView.setPaintFlags(textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-
+                    textView.setTextColor(0x265E4A);
                     for (int i = 0; i < 16; i++) {
                         if (buttons[i].getTooltipText().equals("selected")) {
                             buttons[i].setBackground(null);
