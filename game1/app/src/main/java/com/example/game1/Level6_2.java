@@ -19,7 +19,7 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Level3_2 extends AppCompatActivity {
+public class Level6_2 extends AppCompatActivity {
 
     final Context context = this;
 
@@ -47,21 +47,21 @@ public class Level3_2 extends AppCompatActivity {
     public void popUpEnd(){
         final Dialog dialog1 = new Dialog(context);
         dialog1.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog1.setContentView(R.layout.popup_level3_end);
+        dialog1.setContentView(R.layout.popup_level6_end);
         dialog1.setTitle(" ");
         // set the custom dialog components - text, image and button
-        TextView text = (TextView) dialog1.findViewById(R.id.level3_text_end);
+        TextView text = (TextView) dialog1.findViewById(R.id.level6_text_end);
         ImageView image = (ImageView) dialog1.findViewById(R.id.popup);
         image.setImageResource(R.drawable.ic_popup);
         ImageView image1 = (ImageView) dialog1.findViewById(R.id.voldik_not_bad);
-        ImageView image3 = (ImageView) dialog1.findViewById(R.id.level3_popup);
+        ImageView image3 = (ImageView) dialog1.findViewById(R.id.level6_popup);
         ImageButton dialogButton1 = (ImageButton) dialog1.findViewById(R.id.continue_popup);
         // if button is clicked, close the custom dialog
         dialogButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                  try {
-                    Intent intent = new Intent(Level3_2.this, Level4_1.class );
+                    Intent intent = new Intent(Level6_2.this, Level7_1.class );
                     startActivity(intent);
                     finish();
                 } catch (Exception e){
@@ -77,7 +77,7 @@ public class Level3_2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.level3_2);
+        setContentView(R.layout.level6_2);
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -118,7 +118,7 @@ public class Level3_2 extends AppCompatActivity {
 
         TextView[] buttons = {letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8, letter9,letter10, letter11, letter12, letter13, letter14, letter15, letter16 };
 
-        StringBuilder[] hiddenWords = {new StringBuilder("STOLE"), new StringBuilder("KILL"), new StringBuilder("STRANGE")};
+        StringBuilder[] hiddenWords = {new StringBuilder("PARENTS"), new StringBuilder("SPELL"), new StringBuilder("SOUL")};
 
 
         TextView.OnClickListener onClickListener =  new View.OnClickListener() {
@@ -346,7 +346,7 @@ public class Level3_2 extends AppCompatActivity {
 
     public void onBackPressed(){
         try {
-            Intent intent = new Intent(Level3_2.this, Level1_1.class);
+            Intent intent = new Intent(Level6_2.this, Level1_1.class);
             startActivity(intent);
             finish();
         } catch (Exception e) {
