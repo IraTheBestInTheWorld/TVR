@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bg11" />
+
+
+    <ImageButton
+        android:id="@+id/level2_start"
+        android:layout_width="213dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="610dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/start_l1" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView19"
+            android:layout_width="320dp"
+            android:layout_height="350dp"
+            android:layout_marginTop="90dp"
+            app:srcCompat="@drawable/level5_text" />
+
+        <ImageView
+            android:id="@+id/imageView18"
+            android:layout_width="320dp"
+            android:layout_height="170dp"
+            android:layout_marginTop="-70dp"
+            app:srcCompat="@drawable/level5_task"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
