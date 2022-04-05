@@ -116,6 +116,7 @@ public class Level1_2 extends AppCompatActivity {
 
 
         TextView.OnClickListener onClickListener =  new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
@@ -124,11 +125,15 @@ public class Level1_2 extends AppCompatActivity {
                 if (letter.getTooltipText().equals("empty")) {
 
                     boolean valid = false;
+                    boolean sameLetter = false;
                     switch (v.getId()) {
                         case R.id.letter1:
                             if (lastClicked[0][0] == null || lastClicked[0][0] == letter2 || lastClicked[0][0] == letter4) {
                                 valid = true;
                             } else {
+                                if (lastClicked[0][0] == letter1){
+                                   sameLetter = true;
+                                }
                                 valid = false;
                             }
                             break;
@@ -195,6 +200,15 @@ public class Level1_2 extends AppCompatActivity {
                         lastClicked[0][0] = letter;
                         CharSequence character = letter.getText();
                         guessWord[0].append(character);
+
+                    }
+                    else {
+                        if(sameLetter){
+                            letter.setTextColor(R.color.dark_blue);
+                            lastClicked[0][1] = lastClicked[0][0];
+
+
+                        }
 
                     }
                 }
