@@ -1,5 +1,6 @@
 package com.example.game1;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -206,6 +207,7 @@ public class Level1_2 extends AppCompatActivity {
 
 
         Button.OnClickListener onClickListenerButton =  new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
@@ -227,7 +229,7 @@ public class Level1_2 extends AppCompatActivity {
                 if (isGuessed) {
 
                     textView.setPaintFlags(textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                    textView.setTextColor(0x265E4A);
+                    textView.setTextColor(R.color.dark_green);
                     for (int i = 0; i < 9; i++) {
                         if (buttons[i].getTooltipText().equals("selected")) {
                             buttons[i].setBackground(null);
