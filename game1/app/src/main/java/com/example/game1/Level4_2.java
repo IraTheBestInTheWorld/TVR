@@ -1,5 +1,6 @@
 package com.example.game1;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -167,7 +168,7 @@ public class Level4_2 extends AppCompatActivity {
                             }
                             break;
                         case R.id.letter6:
-                            if (lastClicked[0][0] == null || lastClicked[0][0] == letter2 || lastClicked[0][0] == letter5 || lastClicked[0][0] == letter8 || lastClicked[0][0] == letter10) {
+                            if (lastClicked[0][0] == null || lastClicked[0][0] == letter2 || lastClicked[0][0] == letter5|| lastClicked[0][0] == letter7 || lastClicked[0][0] == letter10) {
                                 valid = true;
                             } else {
                                 valid = false;
@@ -266,6 +267,7 @@ public class Level4_2 extends AppCompatActivity {
 
 
         Button.OnClickListener onClickListenerButton =  new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {

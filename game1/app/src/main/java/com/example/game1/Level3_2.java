@@ -119,7 +119,7 @@ public class Level3_2 extends AppCompatActivity {
 
         TextView[] buttons = {letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8, letter9,letter10, letter11, letter12, letter13, letter14, letter15, letter16 };
 
-        StringBuilder[] hiddenWords = {new StringBuilder("STOLE"), new StringBuilder("KILL"), new StringBuilder("STRANGE")};
+        StringBuilder[] hiddenWords = {new StringBuilder("KILL"), new StringBuilder("STOLE"), new StringBuilder("STRANGE")};
 
 
         TextView.OnClickListener onClickListener =  new View.OnClickListener() {
@@ -168,7 +168,7 @@ public class Level3_2 extends AppCompatActivity {
                             }
                             break;
                         case R.id.letter6:
-                            if (lastClicked[0][0] == null || lastClicked[0][0] == letter2 || lastClicked[0][0] == letter5 || lastClicked[0][0] == letter7 || lastClicked[0][0] == letter10) {
+                            if (lastClicked[0][0] == null || lastClicked[0][0] == letter2 || lastClicked[0][0] == letter5|| lastClicked[0][0] == letter7 || lastClicked[0][0] == letter10) {
                                 valid = true;
                             } else {
                                 valid = false;

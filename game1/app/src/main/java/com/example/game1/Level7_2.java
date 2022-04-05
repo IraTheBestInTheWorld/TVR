@@ -78,7 +78,7 @@ public class Level7_2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.level6_2);
+        setContentView(R.layout.level7_2);
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -168,7 +168,7 @@ public class Level7_2 extends AppCompatActivity {
                             }
                             break;
                         case R.id.letter6:
-                            if (lastClicked[0][0] == null || lastClicked[0][0] == letter2 || lastClicked[0][0] == letter5 || lastClicked[0][0] == letter8 || lastClicked[0][0] == letter10) {
+                            if (lastClicked[0][0] == null || lastClicked[0][0] == letter2 || lastClicked[0][0] == letter5|| lastClicked[0][0] == letter7 || lastClicked[0][0] == letter10) {
                                 valid = true;
                             } else {
                                 valid = false;
