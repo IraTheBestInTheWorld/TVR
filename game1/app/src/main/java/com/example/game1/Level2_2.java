@@ -1,5 +1,6 @@
 package com.example.game1;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -266,6 +267,7 @@ public class Level2_2 extends AppCompatActivity {
 
 
         Button.OnClickListener onClickListenerButton =  new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
