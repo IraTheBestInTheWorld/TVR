@@ -359,7 +359,7 @@ public class Level6_2 extends AppCompatActivity {
 
     public void onBackPressed(){
         try {
-            Intent intent = new Intent(Level6_2.this, Level1_1.class);
+            Intent intent = new Intent(Level6_2.this, Level6_1.class);
             startActivity(intent);
             finish();
         } catch (Exception e) {

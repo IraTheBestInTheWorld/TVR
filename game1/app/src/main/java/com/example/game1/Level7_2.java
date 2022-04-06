@@ -63,7 +63,7 @@ public class Level7_2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                  try {
-                    Intent intent = new Intent(Level7_2.this, Level7_1.class );
+                    Intent intent = new Intent(Level7_2.this, MainActivity.class );
                     startActivity(intent);
                     finish();
                 } catch (Exception e){
@@ -72,6 +72,16 @@ public class Level7_2 extends AppCompatActivity {
                 dialog1.dismiss();
             }
         });
+
+        SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
+        final int level = save.getInt("Level", 1);
+        if (level>7){
+
+        } else {
+            SharedPreferences.Editor editor = save.edit();
+            editor.putInt("Level", 1);
+            editor.commit();
+        }
         dialog1.show();
     }
 
@@ -349,7 +359,7 @@ public class Level7_2 extends AppCompatActivity {
 
     public void onBackPressed(){
         try {
-            Intent intent = new Intent(Level7_2.this, Level1_1.class);
+            Intent intent = new Intent(Level7_2.this, Level7_1.class);
             startActivity(intent);
             finish();
         } catch (Exception e) {
