@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
@@ -62,7 +63,7 @@ public class Level7_2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                  try {
-                    Intent intent = new Intent(Level7_2.this, Level7_1.class );
+                    Intent intent = new Intent(Level7_2.this, MainActivity.class );
                     startActivity(intent);
                     finish();
                 } catch (Exception e){
@@ -71,6 +72,16 @@ public class Level7_2 extends AppCompatActivity {
                 dialog1.dismiss();
             }
         });
+
+        SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
+        final int level = save.getInt("Level", 1);
+        if (level>7){
+
+        } else {
+            SharedPreferences.Editor editor = save.edit();
+            editor.putInt("Level", 1);
+            editor.commit();
+        }
         dialog1.show();
     }
 
@@ -78,7 +89,7 @@ public class Level7_2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.level6_2);
+        setContentView(R.layout.level7_2);
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -168,7 +179,7 @@ public class Level7_2 extends AppCompatActivity {
                             }
                             break;
                         case R.id.letter6:
-                            if (lastClicked[0][0] == null || lastClicked[0][0] == letter2 || lastClicked[0][0] == letter5 || lastClicked[0][0] == letter8 || lastClicked[0][0] == letter10) {
+                            if (lastClicked[0][0] == null || lastClicked[0][0] == letter2 || lastClicked[0][0] == letter5|| lastClicked[0][0] == letter7 || lastClicked[0][0] == letter10) {
                                 valid = true;
                             } else {
                                 valid = false;
@@ -348,7 +359,7 @@ public class Level7_2 extends AppCompatActivity {
 
     public void onBackPressed(){
         try {
-            Intent intent = new Intent(Level7_2.this, Level1_1.class);
+            Intent intent = new Intent(Level7_2.this, Level7_1.class);
             startActivity(intent);
             finish();
         } catch (Exception e) {

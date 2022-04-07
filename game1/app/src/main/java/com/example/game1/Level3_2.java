@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
@@ -71,6 +72,16 @@ public class Level3_2 extends AppCompatActivity {
                 dialog1.dismiss();
             }
         });
+
+        SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
+        final int level = save.getInt("Level", 1);
+        if (level>3){
+
+        } else {
+            SharedPreferences.Editor editor = save.edit();
+            editor.putInt("Level", 4);
+            editor.commit();
+        }
         dialog1.show();
     }
 
@@ -119,7 +130,7 @@ public class Level3_2 extends AppCompatActivity {
 
         TextView[] buttons = {letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8, letter9,letter10, letter11, letter12, letter13, letter14, letter15, letter16 };
 
-        StringBuilder[] hiddenWords = {new StringBuilder("STOLE"), new StringBuilder("KILL"), new StringBuilder("STRANGE")};
+        StringBuilder[] hiddenWords = {new StringBuilder("KILL"), new StringBuilder("STOLE"), new StringBuilder("STRANGE")};
 
 
         TextView.OnClickListener onClickListener =  new View.OnClickListener() {
@@ -168,7 +179,7 @@ public class Level3_2 extends AppCompatActivity {
                             }
                             break;
                         case R.id.letter6:
-                            if (lastClicked[0][0] == null || lastClicked[0][0] == letter2 || lastClicked[0][0] == letter5 || lastClicked[0][0] == letter7 || lastClicked[0][0] == letter10) {
+                            if (lastClicked[0][0] == null || lastClicked[0][0] == letter2 || lastClicked[0][0] == letter5|| lastClicked[0][0] == letter7 || lastClicked[0][0] == letter10) {
                                 valid = true;
                             } else {
                                 valid = false;
@@ -348,7 +359,7 @@ public class Level3_2 extends AppCompatActivity {
 
     public void onBackPressed(){
         try {
-            Intent intent = new Intent(Level3_2.this, Level1_1.class);
+            Intent intent = new Intent(Level3_2.this, Level3_1.class);
             startActivity(intent);
             finish();
         } catch (Exception e) {
