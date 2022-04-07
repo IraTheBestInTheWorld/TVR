@@ -210,8 +210,7 @@
         android:id="@+id/btnGuessWord"
         android:layout_width="222dp"
         android:layout_height="74dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gameField"
         app:layout_constraintTop_toBottomOf="@id/gameField"
         android:layout_marginTop="40dp"
         app:srcCompat="@drawable/guess_word"
@@ -256,6 +255,15 @@
             android:textColor="@color/white"
             android:textSize="19sp" />
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/erasebtn"
+        tools:layout_editor_absoluteX="296dp"
+        tools:layout_editor_absoluteY="630dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
