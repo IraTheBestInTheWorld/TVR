@@ -206,16 +206,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/btnGuessWord"
-        android:layout_width="222dp"
-        android:layout_height="74dp"
-        app:layout_constraintStart_toStartOf="@id/gameField"
-        app:layout_constraintTop_toBottomOf="@id/gameField"
-        android:layout_marginTop="40dp"
-        app:srcCompat="@drawable/guess_word"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="591dp" />
+
 
 
 
@@ -257,13 +248,25 @@
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/btnGuessWord"
+        android:layout_width="222dp"
+        android:layout_height="74dp"
+        app:layout_constraintStart_toStartOf="@id/gameField"
+        app:layout_constraintTop_toBottomOf="@id/gameField"
+        android:layout_marginTop="40dp"
+        app:srcCompat="@drawable/guess_word"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="591dp" />
+
+    <ImageButton
+        android:id="@+id/btnErase"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/erasebtn"
-        tools:layout_editor_absoluteX="296dp"
-        tools:layout_editor_absoluteY="630dp" />
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="@id/btnGuessWord"
+        app:layout_constraintEnd_toEndOf="@id/gameField"
+        app:srcCompat="@drawable/erase_btn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

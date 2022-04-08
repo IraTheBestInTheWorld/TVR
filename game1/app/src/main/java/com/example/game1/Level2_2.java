@@ -97,6 +97,8 @@ public class Level2_2 extends AppCompatActivity {
         String str = "";
         final StringBuilder[] guessWord = {new StringBuilder(str)};
 
+
+
         TextView letter1 = findViewById(R.id.letter1);
         TextView letter2 = findViewById(R.id.letter2);
         TextView letter3 = findViewById(R.id.letter3);
@@ -123,7 +125,13 @@ public class Level2_2 extends AppCompatActivity {
 
         final TextView[][] lastClicked = {{null}};
 
-        ImageView btnGuessWord = findViewById(R.id.btnGuessWord);
+        ImageButton btnGuessWord = findViewById(R.id.btnGuessWord);
+        ImageButton btnErase = findViewById(R.id.btnErase);
+
+        //выключаем кнопочки
+
+        btnGuessWord.setVisibility(View.INVISIBLE);
+        btnErase.setVisibility(View.INVISIBLE);
 
         TextView ntg_1 = findViewById(R.id.ntg_1);
         TextView ntg_2 = findViewById(R.id.ntg_2);
@@ -264,7 +272,8 @@ public class Level2_2 extends AppCompatActivity {
                         lastClicked[0][0] = letter;
                         CharSequence character = letter.getText();
                         guessWord[0].append(character);
-
+                        btnGuessWord.setVisibility(View.VISIBLE);
+                        btnErase.setVisibility(View.VISIBLE);
                     }
                 }
             }
@@ -277,8 +286,28 @@ public class Level2_2 extends AppCompatActivity {
 
 
 
+        btnErase.setOnClickListener(new View.OnClickListener() {
 
-        Button.OnClickListener onClickListenerButton =  new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onClick(View view) {
+                for (int i = 0; i < 16; i++) {
+                    if (buttons[i].getTooltipText().equals("selected")) {
+                        buttons[i].setBackground(null);
+                        buttons[i].setBackgroundResource(R.color.white);
+                        buttons[i].setTooltipText("empty");
+                    }
+                }
+
+                btnGuessWord.setVisibility(View.INVISIBLE);
+                btnErase.setVisibility(View.INVISIBLE);
+                guessWord[0].delete(0, guessWord[0].length());
+                lastClicked[0][0] = null;
+                levelIsPassed[0] = true;
+            }
+        });
+
+        btnGuessWord.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceAsColor")
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
@@ -302,6 +331,9 @@ public class Level2_2 extends AppCompatActivity {
                     isGuessed = true;
                     hiddenWords[2] = null;
                 }
+
+                btnGuessWord.setVisibility(View.INVISIBLE);
+                btnErase.setVisibility(View.INVISIBLE);
 
                 if (isGuessed) {
 
@@ -334,9 +366,10 @@ public class Level2_2 extends AppCompatActivity {
                     }
                 }
 
+                btnGuessWord.setVisibility(View.INVISIBLE);
+                btnErase.setVisibility(View.INVISIBLE);
                 guessWord[0].delete(0, guessWord[0].length());
                 lastClicked[0][0] = null;
-
                 levelIsPassed[0] = true;
 
                 for (StringBuilder stringBuilder : hiddenWords) {
@@ -349,11 +382,7 @@ public class Level2_2 extends AppCompatActivity {
                     popUpEnd();
                 }
             }
-
-        };
-
-        btnGuessWord.setOnClickListener(onClickListenerButton);
-
+        });
 
     }
 
