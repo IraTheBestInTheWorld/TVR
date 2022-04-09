@@ -9,12 +9,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Hint extends AppCompatActivity {
     private final Context context;
-    ImageButton bulb = findViewById(R.id.btn_hint);
-    TextView hint_number = findViewById(R.id.hint_number);
     int number = 13;
+
+    TextView hint_number;
+    ImageButton bulb;
+
 
     public  Hint (Context context){
         this.context=context;
+        setContentView(R.layout.level1_2);
+        bulb = findViewById(R.id.btn_hint);
+        hint_number = findViewById(R.id.hint_number);
     }
 
 

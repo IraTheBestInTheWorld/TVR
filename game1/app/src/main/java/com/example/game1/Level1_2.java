@@ -320,6 +320,7 @@ public class Level1_2 extends AppCompatActivity {
                     }
             }
         });
+
         Hint hint = new Hint(this);
         btnHint.setOnClickListener(new View.OnClickListener() {
             @Override
