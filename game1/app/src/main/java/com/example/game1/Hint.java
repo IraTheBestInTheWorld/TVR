@@ -1,13 +1,13 @@
 package com.example.game1;
 
-import android.content.Context;
+
 import android.view.View;
-import android.widget.ImageButton;
-import android.widget.TextView;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Hint extends AppCompatActivity {
+<<<<<<< HEAD
     private final Context context;
     int number = 13;
 
@@ -24,7 +24,13 @@ public class Hint extends AppCompatActivity {
 
 
     public void useHint(){
+=======
+    int number = 13;
+
+    public int getNumber() {
+>>>>>>> 4932368d050a0f5288b1c890e3797be0b72746b2
         number--;
-        hint_number.setText(number);
+        return number;
     }
+
 }
