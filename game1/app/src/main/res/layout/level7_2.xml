@@ -303,7 +303,7 @@
 
         </LinearLayout>
     </LinearLayout>
-    
+
     <LinearLayout
         android:id="@+id/needToGuess"
         android:layout_width="321dp"
