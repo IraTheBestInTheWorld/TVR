@@ -84,6 +84,24 @@ public class MainActivity extends AppCompatActivity {
                         finish();
                     } else {
                     }
+                    if(level>=8){
+                        Intent intent = new Intent(MainActivity.this, Level8_1.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                    }
+                    if(level>=9){
+                        Intent intent = new Intent(MainActivity.this, Level9_1.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                    }
+                    if(level>=10){
+                        Intent intent = new Intent(MainActivity.this, Level10_1.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                    }
                 } catch (Exception e) {
                 }
             }
