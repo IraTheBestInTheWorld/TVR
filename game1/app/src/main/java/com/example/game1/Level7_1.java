@@ -33,7 +33,7 @@ public class Level7_1 extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         try {
-            Intent intent = new Intent(Level7_1.this, Level5_2.class);
+            Intent intent = new Intent(Level7_1.this, Level6_2.class);
             startActivity(intent);
             finish();
         } catch (Exception e) {
