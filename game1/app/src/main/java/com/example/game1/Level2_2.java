@@ -99,6 +99,7 @@ public class Level2_2 extends AppCompatActivity {
 
 
 
+
         TextView letter1 = findViewById(R.id.letter1);
         TextView letter2 = findViewById(R.id.letter2);
         TextView letter3 = findViewById(R.id.letter3);
@@ -384,7 +385,22 @@ public class Level2_2 extends AppCompatActivity {
             }
         });
 
+        Hint hint = new Hint();
+        ImageButton btnHint = findViewById(R.id.btn_hint);
+        TextView numberHint = findViewById(R.id.hint_number);
+        numberHint.setText("" + hint.getNumber());
+
+
+
+        btnHint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int x = hint.getUsedNumber();
+                numberHint.setText("" + x);
+            }
+        });
     }
+
 
     public void onBackPressed(){
         try {

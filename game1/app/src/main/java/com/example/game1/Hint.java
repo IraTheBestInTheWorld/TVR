@@ -1,18 +1,17 @@
 package com.example.game1;
 
 
-import android.view.View;
-
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Hint extends AppCompatActivity {
 
-    int number = 13;
-
-
+    int number = 3;
 
     public int getNumber(){
+        return number;
+    }
+
+    public int getUsedNumber(){
         number--;
         return number;
     }

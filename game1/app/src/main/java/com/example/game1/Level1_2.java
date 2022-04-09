@@ -228,7 +228,7 @@ public class Level1_2 extends AppCompatActivity {
         for (int i = 0; i < 9; i++) {
             buttons[i].setOnClickListener(onClickListener);
         }
-         // онклик для стерки
+        // онклик для стерки
         btnErase.setOnClickListener(new View.OnClickListener() {
 
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -255,83 +255,89 @@ public class Level1_2 extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.O)
             public void onClick(View view) {
 
-                    TextView textView = null;
-                    Boolean isGuessed = false;
-                    lastClicked[0][0] = null;
+                TextView textView = null;
+                Boolean isGuessed = false;
+                lastClicked[0][0] = null;
 
-                    if (hiddenWords[0] != null && guessWord[0].toString().equals(hiddenWords[0].toString())) {
-                        textView = ntg_1;
-                        isGuessed = true;
-                        hiddenWords[0] = null;
-                    }
-                    if (hiddenWords[1] != null && guessWord[0].toString().equals(hiddenWords[1].toString())) {
-                        textView = ntg_2;
-                        isGuessed = true;
-                        hiddenWords[1] = null;
-                    }
+                if (hiddenWords[0] != null && guessWord[0].toString().equals(hiddenWords[0].toString())) {
+                    textView = ntg_1;
+                    isGuessed = true;
+                    hiddenWords[0] = null;
+                }
+                if (hiddenWords[1] != null && guessWord[0].toString().equals(hiddenWords[1].toString())) {
+                    textView = ntg_2;
+                    isGuessed = true;
+                    hiddenWords[1] = null;
+                }
 
 
-                    btnGuessWord.setVisibility(View.INVISIBLE);
-                    btnErase.setVisibility(View.INVISIBLE);
+                btnGuessWord.setVisibility(View.INVISIBLE);
+                btnErase.setVisibility(View.INVISIBLE);
 
-                    if (isGuessed) {
-                        textView.setPaintFlags(textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                        textView.setTextColor(R.color.dark_green);
-                        for (int i = 0; i < 9; i++) {
-                            if (buttons[i].getTooltipText().equals("selected")) {
-                                buttons[i].setBackground(null);
-                                buttons[i].setBackgroundResource(drawables[color[0]]);
-                                buttons[i].setTextColor(Color.WHITE);
-                                buttons[i].setTooltipText("guessed");
-                            }
-                        }
-                        color[0] += 1;
-                    } else {
-                        for (int i = 0; i < 9; i++) {
-                            if (buttons[i].getTooltipText().equals("selected")) {
-                                buttons[i].setBackground(null);
-                                buttons[i].setBackgroundResource(R.color.white);
-                                buttons[i].setTooltipText("empty");
-
-                            }
-                        }
-                        mistakesCounter[0]++;
-                        if (mistakesCounter[0] == 3) {
-                            popUp();
-                            mistakesCounter[0] = 0;
+                if (isGuessed) {
+                    textView.setPaintFlags(textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    textView.setTextColor(R.color.dark_green);
+                    for (int i = 0; i < 9; i++) {
+                        if (buttons[i].getTooltipText().equals("selected")) {
+                            buttons[i].setBackground(null);
+                            buttons[i].setBackgroundResource(drawables[color[0]]);
+                            buttons[i].setTextColor(Color.WHITE);
+                            buttons[i].setTooltipText("guessed");
                         }
                     }
+                    color[0] += 1;
+                } else {
+                    for (int i = 0; i < 9; i++) {
+                        if (buttons[i].getTooltipText().equals("selected")) {
+                            buttons[i].setBackground(null);
+                            buttons[i].setBackgroundResource(R.color.white);
+                            buttons[i].setTooltipText("empty");
 
-                    btnGuessWord.setVisibility(View.INVISIBLE);
-                    btnErase.setVisibility(View.INVISIBLE);
-
-                    guessWord[0].delete(0, guessWord[0].length());
-                    lastClicked[0][0] = null;
-                    levelIsPassed[0] = true;
-
-                    for (StringBuilder stringBuilder : hiddenWords) {
-                        if (stringBuilder != null) {
-                            levelIsPassed[0] = false;
-                            break;
                         }
                     }
-                    if (levelIsPassed[0]) {
-                        popUpEnd();
+                    mistakesCounter[0]++;
+                    if (mistakesCounter[0] == 3) {
+                        popUp();
+                        mistakesCounter[0] = 0;
                     }
+                }
+
+                btnGuessWord.setVisibility(View.INVISIBLE);
+                btnErase.setVisibility(View.INVISIBLE);
+
+                guessWord[0].delete(0, guessWord[0].length());
+                lastClicked[0][0] = null;
+                levelIsPassed[0] = true;
+
+                for (StringBuilder stringBuilder : hiddenWords) {
+                    if (stringBuilder != null) {
+                        levelIsPassed[0] = false;
+                        break;
+                    }
+                }
+                if (levelIsPassed[0]) {
+                    popUpEnd();
+                }
             }
         });
 
         ImageButton btnHint = findViewById(R.id.btn_hint);
         TextView numberHint = findViewById(R.id.hint_number);
-
         Hint hint = new Hint();
 
         btnHint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                numberHint.setText(hint.getNumber());
+                numberHint.setText("" + hint.getUsedNumber());
+                if (hint.getNumber() == 0) {
+                    btnHint.setBackground(null);
+                    btnHint.setImageResource(R.drawable.ic_nohintssvg);
+                    btnHint.setEnabled(false);
+                }
             }
         });
+
+
     }
 
             public void onBackPressed(){

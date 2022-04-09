@@ -285,14 +285,16 @@
         android:id="@+id/hint_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="-72dp"
-        android:layout_marginTop="70dp"
-        android:text="13"
+        android:layout_marginTop="45dp"
         android:fontFamily="@font/nunito_regular"
-        android:textSize="12sp"
+        android:text="3"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
         android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/btn_hint"
+        app:layout_constraintEnd_toEndOf="@id/btn_hint"
+        app:layout_constraintTop_toTopOf="@id/btn_hint" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
