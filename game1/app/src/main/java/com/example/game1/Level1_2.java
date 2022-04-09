@@ -120,6 +120,7 @@ public class Level1_2 extends AppCompatActivity {
 
         ImageButton btnGuessWord = findViewById(R.id.btnGuessWord);
         ImageButton btnErase = findViewById(R.id.btnErase);
+        ImageButton btnHint = findViewById(R.id.btn_hint);
 
         //выключаем кнопочки
 
@@ -319,7 +320,13 @@ public class Level1_2 extends AppCompatActivity {
                     }
             }
         });
-
+        Hint hint = new Hint(this);
+        btnHint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hint.useHint();
+            }
+        });
     }
 
             public void onBackPressed(){

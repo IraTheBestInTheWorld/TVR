@@ -270,7 +270,7 @@
 
 
     <ImageButton
-        android:id="@+id/btn_help"
+        android:id="@+id/btn_hint"
         android:layout_width="50dp"
         android:layout_height="65dp"
         android:layout_marginStart="-90dp"
@@ -282,7 +282,7 @@
         app:srcCompat="@drawable/help_btn" />
 
     <TextView
-        android:id="@+id/help_number"
+        android:id="@+id/hint_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="-72dp"
