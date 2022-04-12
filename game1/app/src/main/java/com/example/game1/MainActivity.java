@@ -11,8 +11,11 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.example.game1.databinding.ActivityMainBinding;
+
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
         final int level = save.getInt("Level", 1);
-
 
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -80,6 +82,24 @@ public class MainActivity extends AppCompatActivity {
                     }
                     if(level>=7){
                         Intent intent = new Intent(MainActivity.this, Level7_1.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                    }
+                    if(level>=8){
+                        Intent intent = new Intent(MainActivity.this, Level8_1.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                    }
+                    if(level>=9){
+                        Intent intent = new Intent(MainActivity.this, Level9_1.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                    }
+                    if(level>=10){
+                        Intent intent = new Intent(MainActivity.this, Level10_1.class);
                         startActivity(intent);
                         finish();
                     } else {

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,6 +21,8 @@ import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class Level7_2 extends AppCompatActivity {
 
@@ -63,7 +66,7 @@ public class Level7_2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                  try {
-                    Intent intent = new Intent(Level7_2.this, MainActivity.class );
+                    Intent intent = new Intent(Level7_2.this, Deutschland.class );
                     startActivity(intent);
                     finish();
                 } catch (Exception e){
@@ -79,7 +82,7 @@ public class Level7_2 extends AppCompatActivity {
 
         } else {
             SharedPreferences.Editor editor = save.edit();
-            editor.putInt("Level", 1);
+            editor.putInt("Level", 8);
             editor.commit();
         }
         dialog1.show();
@@ -92,8 +95,15 @@ public class Level7_2 extends AppCompatActivity {
         setContentView(R.layout.level7_2);
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        stopService(new Intent(this, DeutschMusic.class));
 
         String str = "";
+        final boolean[] hintIsActive = {false};
+
+        ImageButton btnHint = findViewById(R.id.btn_hint);
+        TextView numberHint = findViewById(R.id.hint_number);
+        Hint hint = new Hint();
+
         final StringBuilder[] guessWord = {new StringBuilder(str)};
 
         TextView letter1 = findViewById(R.id.letter1);
@@ -136,7 +146,62 @@ public class Level7_2 extends AppCompatActivity {
         TextView ntg_2 = findViewById(R.id.ntg_2);
         TextView ntg_3 = findViewById(R.id.ntg_3);
 
+        TextView[] words = {ntg_1, ntg_2, ntg_3};
+
+        TextView.OnClickListener onClickListenerForWords = new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onClick(View v) {
+
+                if(hintIsActive[0] == true) {
+                    TextView word = findViewById(v.getId());
+
+                    if (word == ntg_1) {
+                        letter5.setTextColor(Color.parseColor("#59A905"));
+                        letter5.setTextSize(40);
+                        Typeface typeface = getResources().getFont(R.font.nunito_black);
+                        letter5.setTypeface(typeface);
+                        hintIsActive[0] = false;
+                        ntg_1.setEnabled(false);
+                    }
+
+                    if (word == ntg_2) {
+                        letter13.setTextColor(Color.parseColor("#59A905"));
+                        letter13.setTextSize(40);
+                        Typeface typeface = getResources().getFont(R.font.nunito_black);
+                        letter13.setTypeface(typeface);
+                        hintIsActive[0] = false;
+                        ntg_2.setEnabled(false);
+                    }
+
+                    if (word == ntg_3) {
+                        letter16.setTextColor(Color.parseColor("#59A905"));
+                        letter16.setTextSize(40);
+                        Typeface typeface = getResources().getFont(R.font.nunito_black);
+                        letter16.setTypeface(typeface);
+                        hintIsActive[0] = false;
+                        ntg_3.setEnabled(false);
+                    }
+
+                    if (hintIsActive[0] == false) {
+                        numberHint.setText("" + hint.getUsedNumber());
+                        if (hint.getNumber() == 0) {
+                            btnHint.setBackground(null);
+                            btnHint.setImageResource(R.drawable.ic_nohintssvg);
+                            btnHint.setEnabled(false);
+                        }
+                    }
+                }
+            }
+        };
+
+        for (TextView textView: words
+        ) { textView.setOnClickListener(onClickListenerForWords);
+        }
+
         TextView[] buttons = {letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8, letter9,letter10, letter11, letter12, letter13, letter14, letter15, letter16 };
+
 
         StringBuilder[] hiddenWords = {new StringBuilder("SNAKE"), new StringBuilder("PERSON"), new StringBuilder("CURSE")};
 
@@ -322,16 +387,19 @@ public class Level7_2 extends AppCompatActivity {
                     textView = ntg_1;
                     isGuessed = true;
                     hiddenWords[0] = null;
+                    textView.setEnabled(false);
                 }
                 if (hiddenWords[1] != null && guessWord[0].toString().equals(hiddenWords[1].toString())) {
                     textView = ntg_2;
                     isGuessed = true;
                     hiddenWords[1] = null;
+                    textView.setEnabled(false);
                 }
                 if (hiddenWords[2] != null && guessWord[0].toString().equals(hiddenWords[2].toString())) {
                     textView = ntg_3;
                     isGuessed = true;
                     hiddenWords[2] = null;
+                    textView.setEnabled(false);
                 }
 
                 btnGuessWord.setVisibility(View.INVISIBLE);
@@ -344,6 +412,11 @@ public class Level7_2 extends AppCompatActivity {
                     textView.setTextColor(R.color.dark_green);
                     for (int i = 0; i < 16; i++) {
                         if (buttons[i].getTooltipText().equals("selected")) {
+                            if((int)buttons[i].getTextSize() == 120){
+                                buttons[i].setTextSize(32);
+                                Typeface typeface = getResources().getFont(R.font.nunito_bold);
+                                buttons[i].setTypeface(typeface);
+                            }
                             buttons[i].setBackground(null);
                             buttons[i].setBackgroundResource(drawables[color[0]]);
                             buttons[i].setTextColor(Color.WHITE);
@@ -383,6 +456,16 @@ public class Level7_2 extends AppCompatActivity {
                 if(levelIsPassed[0]){
                     popUpEnd();
                 }
+            }
+        });
+        btnHint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Snackbar snackbar = Snackbar.make(findViewById(R.id.rootLayout), "Выберите слово вверху", Snackbar.LENGTH_LONG);
+                snackbar.show();
+                hintIsActive[0] = true;
+
             }
         });
 
