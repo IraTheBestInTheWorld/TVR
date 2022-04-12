@@ -71,15 +71,19 @@
         <entry key="..\:/game/TVR/game1/app/src/main/res/font/fonts.xml" value="0.2490740740740741" />
         <entry key="..\:/game/TVR/game1/app/src/main/res/layout/activity_main.xml" value="0.24320652173913043" />
         <entry key="..\:/game/TVR/game1/app/src/main/res/layout/letter_item.xml" value="0.152" />
+        <entry key="..\:/game/TVR/game1/app/src/main/res/layout/level10_1.xml" value="0.1675925925925926" />
+        <entry key="..\:/game/TVR/game1/app/src/main/res/layout/level10_2.xml" value="0.21603260869565216" />
         <entry key="..\:/game/TVR/game1/app/src/main/res/layout/level1_1.xml" value="0.24320652173913043" />
         <entry key="..\:/game/TVR/game1/app/src/main/res/layout/level1_2.xml" value="0.37065637065637064" />
         <entry key="..\:/game/TVR/game1/app/src/main/res/layout/level2_1.xml" value="0.1" />
         <entry key="..\:/game/TVR/game1/app/src/main/res/layout/level2_2.xml" value="0.264" />
-        <entry key="..\:/game/TVR/game1/app/src/main/res/layout/level3_2.xml" value="0.1" />
+        <entry key="..\:/game/TVR/game1/app/src/main/res/layout/level3_2.xml" value="0.2" />
         <entry key="..\:/game/TVR/game1/app/src/main/res/layout/level4_2.xml" value="0.1" />
-        <entry key="..\:/game/TVR/game1/app/src/main/res/layout/level5_2.xml" value="0.2222222222222222" />
-        <entry key="..\:/game/TVR/game1/app/src/main/res/layout/level6_2.xml" value="0.1" />
+        <entry key="..\:/game/TVR/game1/app/src/main/res/layout/level5_2.xml" value="0.1" />
+        <entry key="..\:/game/TVR/game1/app/src/main/res/layout/level6_2.xml" value="0.2" />
         <entry key="..\:/game/TVR/game1/app/src/main/res/layout/level7_2.xml" value="0.1" />
+        <entry key="..\:/game/TVR/game1/app/src/main/res/layout/level8_2.xml" value="0.2222222222222222" />
+        <entry key="..\:/game/TVR/game1/app/src/main/res/layout/level9_2.xml" value="0.2222222222222222" />
         <entry key="..\:/game/TVR/game1/app/src/main/res/layout/start1.xml" value="0.24320652173913043" />
         <entry key="..\:/game/TVR/game1/app/src/main/res/layout/start2.xml" value="0.24320652173913043" />
         <entry key="..\:/game/TVR/game1/app/src/main/res/layout/start3.xml" value="0.2222222222222222" />

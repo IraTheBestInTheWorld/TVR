@@ -184,9 +184,9 @@ public class Level1_2 extends AppCompatActivity {
 
         for (TextView textView: words
         ) { textView.setOnClickListener(onClickListenerForWords);
-
-
         }
+
+
         TextView[] buttons = {letter1, letter2, letter3, letter4, letter5, letter6, letter7, letter8, letter9};
 
         StringBuilder[] hiddenWords = {new StringBuilder("MAGIC"), new StringBuilder("OPEN")};
@@ -323,7 +323,7 @@ public class Level1_2 extends AppCompatActivity {
                     textView = ntg_1;
                     isGuessed = true;
                     hiddenWords[0] = null;
-                    words[0] = null;
+                    textView.setEnabled(false);
 
 
                 }
@@ -331,7 +331,7 @@ public class Level1_2 extends AppCompatActivity {
                     textView = ntg_2;
                     isGuessed = true;
                     hiddenWords[1] = null;
-                    words[1] = null;
+                    textView.setEnabled(false);
                 }
 
 
