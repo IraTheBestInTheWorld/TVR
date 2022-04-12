@@ -40,7 +40,7 @@
         <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/start2.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/start3.xml" value="0.2" />
         <entry key="..\:/Users/yulia/Documents/GitHub/TVR/game1/app/src/main/res/layout/level1_1.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/yulia/Documents/GitHub/TVR/game1/app/src/main/res/layout/level1_2.xml" value="0.1546875" />
+        <entry key="..\:/Users/yulia/Documents/GitHub/TVR/game1/app/src/main/res/layout/level1_2.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/yulia/Documents/GitHub/TVR/game1/app/src/main/res/layout/level2_2.xml" value="0.1546875" />
         <entry key="..\:/Users/yulia/Documents/GitHub/TVR/game1/app/src/main/res/layout/level3_1.xml" value="0.1546875" />
         <entry key="..\:/Users/yulia/Documents/GitHub/TVR/game1/app/src/main/res/layout/level3_2.xml" value="0.3333333333333333" />
@@ -51,6 +51,11 @@
         <entry key="..\:/Users/yulia/Documents/GitHub/TVR/game1/app/src/main/res/layout/level6_2.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/yulia/Documents/GitHub/TVR/game1/app/src/main/res/layout/level7_1.xml" value="0.1546875" />
         <entry key="..\:/Users/yulia/Documents/GitHub/TVR/game1/app/src/main/res/layout/level7_2.xml" value="0.1546875" />
+        <entry key="..\:/Users/yulia/Documents/GitHub/TVR/game1/app/src/main/res/layout/popup_level5_end.xml" value="0.1796875" />
+        <entry key="..\:/Users/yulia/Documents/GitHub/TVR/game1/app/src/main/res/layout/popup_level6_end.xml" value="0.1796875" />
+        <entry key="..\:/Users/yulia/Documents/GitHub/TVR/game1/app/src/main/res/layout/popup_level7_end.xml" value="0.1796875" />
+        <entry key="..\:/Users/yulia/Documents/GitHub/TVR/game1/app/src/main/res/layout/start2.xml" value="0.1796875" />
+        <entry key="..\:/Users/yulia/Documents/GitHub/TVR/game1/app/src/main/res/layout/start3.xml" value="0.1796875" />
         <entry key="..\:/game/TVR/game1/app/src/main/res/drawable/gradient_blie.xml" value="0.1415" />
         <entry key="..\:/game/TVR/game1/app/src/main/res/drawable/gradient_blue.xml" value="0.121" />
         <entry key="..\:/game/TVR/game1/app/src/main/res/drawable/gradient_orange.xml" value="0.1" />
