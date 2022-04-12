@@ -63,7 +63,7 @@ public class Level7_2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                  try {
-                    Intent intent = new Intent(Level7_2.this, Level8_1.class );
+                    Intent intent = new Intent(Level7_2.this, Deutschland.class );
                     startActivity(intent);
                     finish();
                 } catch (Exception e){
@@ -92,6 +92,7 @@ public class Level7_2 extends AppCompatActivity {
         setContentView(R.layout.level7_2);
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        stopService(new Intent(this, DeutschMusic.class));
 
         String str = "";
         final StringBuilder[] guessWord = {new StringBuilder(str)};
