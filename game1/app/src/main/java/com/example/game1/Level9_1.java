@@ -17,6 +17,7 @@ public class Level9_1 extends AppCompatActivity {
         setContentView(R.layout.level9_1);
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        stopService(new Intent(this, FranceMusic.class));
         ImageButton button_start = findViewById(R.id.level2_start);
         button_start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,7 +34,7 @@ public class Level9_1 extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         try {
-            Intent intent = new Intent(Level9_1.this, Level8_2.class);
+            Intent intent = new Intent(Level9_1.this, France.class);
             startActivity(intent);
             finish();
         } catch (Exception e) {

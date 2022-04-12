@@ -11,6 +11,11 @@
         <entry key="..\:/Users/user/TVR/game1/app/src/main/res/drawable/ic_voldik_notbad.xml" value="0.2595" />
         <entry key="..\:/Users/user/TVR/game1/app/src/main/res/font/fonts.xml" value="0.284375" />
         <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/deutschland.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/espana.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/final.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/final_game.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/france.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/letter_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/level10_1.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/level10_2.xml" value="0.2" />
@@ -34,6 +39,9 @@
         <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/level9_2.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/popup.xml" value="0.264" />
         <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/popup_if_wrong.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/popup_if_wrong_deutsch.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/popup_if_wrong_espana.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/popup_if_wrong_france.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/popup_level10_end.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/popup_level1_end.xml" value="0.264" />
         <entry key="..\:/Users/user/TVR/game1/app/src/main/res/layout/popup_level2_end.xml" value="0.25416666666666665" />

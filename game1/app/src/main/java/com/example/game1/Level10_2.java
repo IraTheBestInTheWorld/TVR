@@ -31,12 +31,12 @@ public class Level10_2 extends AppCompatActivity {
     public void popUp(){
         final Dialog dialog = new Dialog(context);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.setContentView(R.layout.popup_if_wrong);
+        dialog.setContentView(R.layout.popup_if_wrong_espana);
         dialog.setTitle(" ");
         // set the custom dialog components - text, image and button
         ImageView image = (ImageView) dialog.findViewById(R.id.voldik_face_palm);
         image.setImageResource(R.drawable.voldik_face_palm);
-        ImageView image1 = (ImageView) dialog.findViewById(R.id.do_you_speak);
+        ImageView image1 = (ImageView) dialog.findViewById(R.id.hablas);
         ImageButton dialogButton = (ImageButton) dialog.findViewById(R.id.yes_sorry);
         // if button is clicked, close the custom dialog
         dialogButton.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +65,7 @@ public class Level10_2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                  try {
-                    Intent intent = new Intent(Level10_2.this, MainActivity.class );
+                    Intent intent = new Intent(Level10_2.this, FinalGame.class );
                     startActivity(intent);
                     finish();
                 } catch (Exception e){
@@ -472,7 +472,7 @@ public class Level10_2 extends AppCompatActivity {
 
     public void onBackPressed(){
         try {
-            Intent intent = new Intent(Level10_2.this, Level7_1.class);
+            Intent intent = new Intent(Level10_2.this, Level10_1.class);
             startActivity(intent);
             finish();
         } catch (Exception e) {
