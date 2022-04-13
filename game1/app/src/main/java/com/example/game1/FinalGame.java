@@ -17,6 +17,7 @@ public class FinalGame extends AppCompatActivity {
         setContentView(R.layout.final_game);
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        startService(new Intent(this, FinalMusic.class));
         ImageButton button_what = (ImageButton) findViewById(R.id.final_btn);
         button_what.setOnClickListener(new View.OnClickListener() {
             @Override

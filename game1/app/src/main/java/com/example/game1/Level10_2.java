@@ -95,6 +95,7 @@ public class Level10_2 extends AppCompatActivity {
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        stopService(new Intent(this, FinalMusic.class));
         String str = "";
         final boolean[] hintIsActive = {false};
 
