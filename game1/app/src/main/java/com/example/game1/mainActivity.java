@@ -8,13 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.game1.databinding.ActivityMainBinding;
 
 
-public class MainActivity extends AppCompatActivity {
+public class mainActivity extends AppCompatActivity {
 
 
     @Override
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(MainActivity.this, Start1.class);
+                    Intent intent = new Intent(mainActivity.this, Start1.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -45,61 +44,61 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     if(level>=1){
-                    Intent intent = new Intent(MainActivity.this, Level1_1.class);
+                    Intent intent = new Intent(mainActivity.this, Level1_1.class);
                     startActivity(intent);
                     finish();
                 } else {
                 }
                     if(level>=2){
-                        Intent intent = new Intent(MainActivity.this, Level2_1.class);
+                        Intent intent = new Intent(mainActivity.this, Level2_1.class);
                         startActivity(intent);
                         finish();
                     } else {
                     }
                     if(level>=3){
-                        Intent intent = new Intent(MainActivity.this, Level3_1.class);
+                        Intent intent = new Intent(mainActivity.this, Level3_1.class);
                         startActivity(intent);
                         finish();
                     } else {
                     }
                     if(level>=4){
-                        Intent intent = new Intent(MainActivity.this, Level4_1.class);
+                        Intent intent = new Intent(mainActivity.this, Level4_1.class);
                         startActivity(intent);
                         finish();
                     } else {
                     }
                     if(level>=5){
-                        Intent intent = new Intent(MainActivity.this, Level5_1.class);
+                        Intent intent = new Intent(mainActivity.this, Level5_1.class);
                         startActivity(intent);
                         finish();
                     } else {
                     }
                     if(level>=6){
-                        Intent intent = new Intent(MainActivity.this, Level6_1.class);
+                        Intent intent = new Intent(mainActivity.this, Level6_1.class);
                         startActivity(intent);
                         finish();
                     } else {
                     }
                     if(level>=7){
-                        Intent intent = new Intent(MainActivity.this, Level7_1.class);
+                        Intent intent = new Intent(mainActivity.this, Level7_1.class);
                         startActivity(intent);
                         finish();
                     } else {
                     }
                     if(level>=8){
-                        Intent intent = new Intent(MainActivity.this, Level8_1.class);
+                        Intent intent = new Intent(mainActivity.this, Level8_1.class);
                         startActivity(intent);
                         finish();
                     } else {
                     }
                     if(level>=9){
-                        Intent intent = new Intent(MainActivity.this, Level9_1.class);
+                        Intent intent = new Intent(mainActivity.this, Level9_1.class);
                         startActivity(intent);
                         finish();
                     } else {
                     }
                     if(level>=10){
-                        Intent intent = new Intent(MainActivity.this, Level10_1.class);
+                        Intent intent = new Intent(mainActivity.this, Level10_1.class);
                         startActivity(intent);
                         finish();
                     } else {

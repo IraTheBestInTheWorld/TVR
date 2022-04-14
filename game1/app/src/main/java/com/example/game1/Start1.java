@@ -34,7 +34,7 @@ public class Start1 extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         try {
-            Intent intent = new Intent(Start1.this, MainActivity.class);
+            Intent intent = new Intent(Start1.this, mainActivity.class);
             startActivity(intent);
             finish();
         } catch (Exception e) {

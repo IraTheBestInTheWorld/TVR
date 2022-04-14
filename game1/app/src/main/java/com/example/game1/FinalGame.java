@@ -22,7 +22,7 @@ public class FinalGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(FinalGame.this, MainActivity.class);
+                    Intent intent = new Intent(FinalGame.this, mainActivity.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
