@@ -26,6 +26,7 @@ public class mainActivity extends AppCompatActivity {
 
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        stopService(new Intent(this, FinalMusic.class));
         ImageButton buttonStart = (ImageButton) findViewById(R.id.start_main);
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override

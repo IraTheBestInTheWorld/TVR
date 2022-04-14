@@ -238,6 +238,7 @@
         <service android:enabled="true" android:name=".DeutschMusic" />
         <service android:enabled="true" android:name=".FranceMusic" />
         <service android:enabled="true" android:name=".EspanaMusic" />
+        <service android:enabled="true" android:name=".FinalMusic" />
     </application>
 
 </manifest>
